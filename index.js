@@ -63,17 +63,16 @@ function filterHandler(req,res){
   // console.log(plases);
 }
 //Constructor
-
-
-
-
-
-
-
-
-
-
-
+function HomeData(property_id,webUrl,address,prop_status, price, beds, baths, photo) {
+  this.id = property_id;
+  this.webUrl=webUrl;
+  this.address=address;
+  this.status = prop_status;
+  this.price = price;
+  this.beds = beds;
+  this.baths = baths;
+  this.photo = photo;
+}
 //handle error 404
 function error404(req, res) {
   return res.status(404).json({ status: 404, responseText: "page not found error" });
