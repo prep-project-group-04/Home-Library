@@ -1,11 +1,75 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const cors = require('cors');
+const axios = require("axios");
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.use(cors());
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function HomeData(property_id,webUrl,address,prop_status, price, beds, baths, photo) {
+  this.id = property_id;
+  this.webUrl=webUrl;
+  this.address=address;
+  this.status = prop_status;
+  this.price = price;
+  this.beds = beds;
+  this.baths = baths;
+  this.photo = photo;
+}
