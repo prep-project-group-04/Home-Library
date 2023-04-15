@@ -16,6 +16,7 @@ let data=require('./home.json');
 
 app.get('/', getHomeHandler);
 app.get('/filter',filterHandler);
+app.delete('/DELETE/:id',deletUserHandller)
 app.use(error404);
 
 
@@ -93,7 +94,16 @@ app.listen(port, () => {
 
 
 
-
+function deletUserHandller(req,res){
+  let {id}=req.params;
+  let sql=`DELETE FROM Users WHERE id=$1;`
+  let values=[id];
+  client.query(sql,values).then(result=>{
+      res.status(204).send("delete")
+  }).catch(function (error) {
+    errorHandler(error, req, res);
+  });
+}
 
 
 
