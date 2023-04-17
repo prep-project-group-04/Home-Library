@@ -9,8 +9,8 @@ CREATE TABLE Comment (
     user_id int,
     Home_id int,
     PRIMARY KEY (user_id, Home_id),
-    address VARCHAR(255),
-    status VARCHAR(255),
+    addruss VARCHAR(255),
+    states VARCHAR(255),
     price VARCHAR(255),
     beds VARCHAR(255),
     baths VARCHAR(255),
@@ -23,4 +23,8 @@ CREATE TABLE  News (
   id SERIAL NOT NULL ,
     PRIMARY KEY (id),
     Email VARCHAR(255)
+);
+
+CREATE TABLE  Crypto (
+    code VARCHAR(255)
 );

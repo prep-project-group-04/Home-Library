@@ -1,13 +1,23 @@
 const nodemailer = require('nodemailer');
 const Mailgen = require('mailgen');
 const { EMAIL, PASSWORD } = require('./env.js')
+const {Client}=require('pg');
+const client =new Client(process.env.DATABASE_URL)
 
 
-/** send mail from real gmail account */
+//send mail from real gmail account 
 function sendEmailHandeler (req, res) {
+    
+    //add to Crypto table 
+    // let email=req.body.email
+    const {email}=req.body;
+    let code = (Math.random() + 1).toString(36).substring(7).toUpperCase();
+    console.log(code)
+    let values=[code] 
+    let sql=`INSERT INTO Crypto (code) VALUES($1) RETURNING *;`
+    client.query(sql,values).then().catch();
 
-    const { userEmail } = req.body;
-  
+
     let config = {
         service : 'gmail',
         auth : {
@@ -33,7 +43,7 @@ function sendEmailHandeler (req, res) {
             table : {
                 data : [
                     {
-                         item: (Math.random() + 1).toString(36).substring(7).toUpperCase(),
+                         item: code,
                     }
                 ]
             },
@@ -45,7 +55,7 @@ function sendEmailHandeler (req, res) {
   
     let message = {
         from : EMAIL,
-        to : userEmail,
+        to : email,
         subject: "Verification",
         html: mail
     }

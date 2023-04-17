@@ -4,7 +4,7 @@ const PORT = 3010
 require('dotenv').config();
 const {Client}=require('pg');
 const client =new Client(process.env.DATABASE_URL)
-
+// to kill a port => sudo kill -9 $(sudo lsof -t -i:portnumber)
 const cors = require('cors');
 app.use(cors());
 const axios = require("axios");
@@ -17,8 +17,11 @@ const hostKey = process.env.HOST_KEY;
 // const url = process.env.URL;
 let data = require('./home.json');
 //router
+//imports the router module from ./router.js file
 const appRoute = require('./router.js')
+//middleware function that will handle any incoming requests to the '/api' endpoint.
 app.use('/api', appRoute);
+//
 app.get('/', getHomeHandler);
 app.get('/filter',filterHandler);
 app.post('/addUser',addUserHandller);
@@ -29,6 +32,8 @@ app.delete('/deleteUser/:id',deletUserHandller);
 // app.post("/restPass",passwordHandeler)
 app.post("/favourite",favouriteHandeler)
 app.get("/email",emailHandeler)
+app.post('/codeChecker',codeCheckerHandller);
+
 
 
 
@@ -183,7 +188,7 @@ function favouriteHandeler(req,res){
   if (!user_id || !Home_id) {
     return res.status(400).alert('Your Not Logged In !!!!');
   }else{
-    let sql=`INSERT INTO Comment (address,status,price,beds,baths,photo,comment)
+    let sql=`INSERT INTO Comment (addruss,states,price,beds,baths,photo,comment)
     VALUES($1,$2,$3,$4,$5,$6,$7) RETURNING * ;`;
     client.query(sql,values).then((result)=>{
         res.json(result.rows);
@@ -199,6 +204,12 @@ function emailHandeler (req,res){
   }).catch((err)=>{errorHandler(err)});
 }
 
+function codeCheckerHandller(req,res){ 
+  let sql=`SELECT code FROM Crypto;`;
+  client.query(sql).then((result)=>{
+      res.json(result.rows);
+  }).catch((err)=>{errorHandler(err)});
+}
 
 
 
