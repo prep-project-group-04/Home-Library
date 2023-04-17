@@ -8,9 +8,6 @@ const client =new Client(process.env.DATABASE_URL)
 const cors = require('cors');
 app.use(cors());
 const axios = require("axios");
-const { Client } = require('pg');
-const url = process.env.DataURL;
-const client = new Client(url);
 // const bodyParser = require('body-parser')
 // app.use(bodyParser.urlencoded({ extended: false }))
 // app.use(bodyParser.json())
@@ -28,6 +25,14 @@ app.get('/getUsers',getUsersHandler);
 app.put('/updateUser/:id',updateUserHandller)
 app.delete('/deleteUser/:id',deletUserHandller);
 //app.put('/updatecomment/:KEY',updatecommentHandller);
+app.post("/restPass",passwordHandeler)
+app.post("/favourite",favouriteHandeler)
+app.get("/email",emailHandeler)
+app.post("/sendEmail",sendEmailHandeler)
+const Mailgen = require('mailgen');
+const { EMAIL, PASSWORD } = require('../env.js')
+
+
 
 
 
@@ -167,10 +172,87 @@ function loginAuthHandler(req,res)
     res.send(` login successfull with ${id}`)
   }
 }
-  
-  
 
 
+
+
+function favouriteHandeler(req,res){
+  const { user_id,Home_id,address,status,price,beds,baths,photo,comment } = req.body;
+  let values = [address,status,price,beds,baths,photo,comment];
+  if (!user_id || !Home_id) {
+    return res.status(400).alert('Your Not Logged In !!!!');
+  }else{
+    let sql=`INSERT INTO Comment (address,status,price,beds,baths,photo,comment)
+    VALUES($1,$2,$3,$4,$5,$6,$7) RETURNING * ;`;
+    client.query(sql,values).then((result)=>{
+        res.json(result.rows);
+  
+    }).catch((err)=>{errorHandler(err)});
+  }
+}
+
+function emailHandeler (req,res){
+  let sql=`SELECT Email FROM Users;`;
+  client.query(sql).then((result)=>{
+      res.json(result.rows);
+  }).catch((err)=>{errorHandler(err)});
+}
+
+/** send mail from real gmail account */
+const sendEmailHandeler = (req, res) => {
+
+  const { Email,fullName } = req.body;
+
+  let config = {
+      service : 'gmail',
+      auth : {
+          user: EMAIL,
+          pass: PASSWORD
+      }
+  }
+
+  let transporter = nodemailer.createTransport(config);
+
+  let MailGenerator = new Mailgen({
+      theme: "default",
+      product : {
+          name: "Mailgen",
+          link : 'https://mailgen.js/'
+      }
+  })
+
+  let response = {
+      body: {
+          name : fullName,
+          intro: "Your code has arrived!",
+          table : {
+              data : [
+                  {
+                       item: (Math.random() + 1).toString(36).substring(7).toUpperCase(),
+                  }
+              ]
+          },
+          outro: "Looking forward to do more business"
+      }
+  }
+
+  let mail = MailGenerator.generate(response)
+
+  let message = {
+      from : EMAIL,
+      to : Email,
+      subject: "Verification",
+      html: mail
+  }
+
+  transporter.sendMail(message).then(() => {
+      return res.status(201).json({
+          msg: "you should receive an email"
+      })
+  }).catch(error => {
+      return res.status(500).json({ error })
+  })
+}
 
 
 //forgetPassword
