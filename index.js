@@ -7,14 +7,17 @@ const client =new Client(process.env.DATABASE_URL)
 
 const cors = require('cors');
 app.use(cors());
+const axios = require("axios");
+const { Client } = require('pg');
+const url = process.env.DataURL;
+const client = new Client(url);
 // const bodyParser = require('body-parser')
 // app.use(bodyParser.urlencoded({ extended: false }))
 // app.use(bodyParser.json())
 app.use(express.json());
-const axios = require('axios');
 const apikey = process.env.API_KEY;
 const hostKey = process.env.HOST_KEY;
-const url = process.env.URL;
+// const url = process.env.URL;
 let data = require('./home.json');
 
 
@@ -25,7 +28,6 @@ app.get('/getUsers',getUsersHandler);
 app.put('/updateUser/:id',updateUserHandller)
 app.delete('/deleteUser/:id',deletUserHandller);
 //app.put('/updatecomment/:KEY',updatecommentHandller);
-app.use(error404);
 
 
 
@@ -56,13 +58,13 @@ function getHomeHandler(req, res) {
 }
 
 function filterHandler(req, res) {
-  let price=req.query.price;
+  let price = req.query.price;
   let city = req.query.city;
   price = price.split('-');
   firstPrice = price[0].slice(0, price[0].length - 1);
-  firstPrice = parseInt(firstPrice)*1000;
+  firstPrice = parseInt(firstPrice) * 1000;
   secondPrice = price[1].slice(0, price[1].length - 1);
-  secondPrice = parseInt(secondPrice)*1000;
+  secondPrice = parseInt(secondPrice) * 1000;
   let array = [];
   for (let i = 0; i < data.length; i++) {
     const element = data[i];
@@ -151,6 +153,55 @@ function HomeData(property_id, webUrl, address, prop_status, price, beds, baths,
   this.baths = baths;
   this.photo = photo;
 }
+
+
+//LOGIN (AUTHENTICATE USER)
+app.post("/loginAuthanication",loginAuthHandler)
+function loginAuthHandler(req,res)
+{ let id=req.query.id
+  const email = req.query.Email;
+  const password = req.query.Password;
+  let sql='SELECT Email,Password FROM Users WHERE Email=$2,Password=$3'
+  if(email==Email && password==Password)
+  {
+    res.send(` login successfull with ${id}`)
+  }
+}
+  
+  
+
+
+
+
+//forgetPassword
+app.post('/reset', resetPasswordHandler);
+
+function resetPasswordHandler(req,res) {
+  // Get the email entered by the user
+  let email=req.body.email
+
+  // Check if the email is valid (you can add more validation if needed)
+  if (!validateEmail(email)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  // Send a request to reset the password
+  var xhr = new XMLHttpRequest();       //this help send a request to the server
+  xhr.open("POST", "reset-password.php");
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      alert("A password reset link has been sent to your email address.");
+    } else {
+      alert("An error occurred while resetting your password.");
+    }
+  };
+  xhr.send(JSON.stringify({ email: email }));
+}
+
+
+app.use(error404);
 //handle error 404
 function error404(req, res) {
   return res.status(404).json({ status: 404, responseText: "page not found error" });
@@ -159,11 +210,6 @@ function error404(req, res) {
 function errorHandler(err, req, res) {
   return res.status(500).json({ status: 500, responseText: "ERROR 500" });
 }
-
-
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
 
 client.connect().then(()=>{
   app.listen(PORT,()=>{console.log("hello" ,PORT);})
