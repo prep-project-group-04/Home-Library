@@ -94,55 +94,6 @@ function HomeData(property_id, webUrl, address, prop_status, price, beds, baths,
 
 
 
-
-
-
-//LOGIN (AUTHENTICATE USER)
-app.post("/loginAuthanication",loginAuthHandler)
-function loginAuthHandler(req,res)
-{ let id=req.query.id
-  const email = req.query.Email;
-  const password = req.query.Password;
-  let sql='SELECT Email,Password FROM Users WHERE Email=$2,Password=$3'
-  if(email==Email && password==Password)
-  {
-    res.send(` login successfull with ${id}`)
-  }
-}
-  
-  
-
-
-
-
-//forgetPassword
-app.post('/reset', resetPasswordHandler);
-
-function resetPasswordHandler(req,res) {
-  // Get the email entered by the user
-  let email=req.body.email
-
-  // Check if the email is valid (you can add more validation if needed)
-  if (!validateEmail(email)) {
-    alert("Please enter a valid email address.");
-    return;
-  }
-
-  // Send a request to reset the password
-  var xhr = new XMLHttpRequest();       //this help send a request to the server
-  xhr.open("POST", "reset-password.php");
-  xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.onload = function () {
-    if (xhr.status === 200) {
-      alert("A password reset link has been sent to your email address.");
-    } else {
-      alert("An error occurred while resetting your password.");
-    }
-  };
-  xhr.send(JSON.stringify({ email: email }));
-}
-
-
 app.use(error404);
 //handle error 404
 function error404(req, res) {
