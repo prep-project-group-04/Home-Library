@@ -184,8 +184,6 @@ function deletUserHandller(req, res) {
   });
 }
 
-
-
 //Constructor
 function HomeData(property_id, webUrl, address, prop_status, price, beds, baths, photo) {
   this.id = property_id;
@@ -197,7 +195,6 @@ function HomeData(property_id, webUrl, address, prop_status, price, beds, baths,
   this.baths = baths;
   this.photo = photo;
 }
-
 
 //LOGIN (AUTHENTICATE USER)
 app.post("/loginAuthanication", loginAuthHandler)
