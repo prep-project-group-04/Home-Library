@@ -13,8 +13,9 @@ app.use(cors());
 app.use(express.json());
 const axios = require('axios');
 const apikey = process.env.API_KEY;
-const hostKey=process.env.HOST_KEY;
-let data=require('./home.json');
+const hostKey = process.env.HOST_KEY;
+const url = process.env.URL;
+let data = require('./home.json');
 
 
 app.get('/', getHomeHandler);
@@ -45,30 +46,43 @@ function getHomeHandler(req, res) {
     }
   };
   axios.request(options).then(function (response) {
-    let result =response.data.properties.map((element)=>{
-     return new HomeData(element.property_id,element.rdc_web_url,element.address.city, element.prop_status, element.price, element.beds, element.baths,element.thumbnail)
-    }) ;
+    let result = response.data.properties.map((element) => {
+      return new HomeData(element.property_id, element.rdc_web_url, element.address.city, element.prop_status, element.price, element.beds, element.baths, element.thumbnail)
+    });
     res.json(result);
   }).catch(function (error) {
     errorHandler(error, req, res);
   });
 }
 
-function filterHandler(req,res){
+function filterHandler(req, res) {
   let price=req.query.price;
-  let city=req.query.city;
-  let prises=[];
-  let plases=[];
+  let city = req.query.city;
+  price = price.split('-');
+  firstPrice = price[0].slice(0, price[0].length - 1);
+  firstPrice = parseInt(firstPrice)*1000;
+  secondPrice = price[1].slice(0, price[1].length - 1);
+  secondPrice = parseInt(secondPrice)*1000;
+  let array = [];
   for (let i = 0; i < data.length; i++) {
     const element = data[i];
-    // prises.push(element.price);
-    if(element.address==city){
-      plases.push((element));
+    if (price == "noChoice") {
+      if (element.address == city) {
+        array.push((element));
+      }
+    }
+    else if (city == "noChoice") {
+      if (element.price >= firstPrice && element.price <= secondPrice) {
+        array.push(element)
+      }
+    }
+    else if (!(price == "noChoice" && city == "noChoice")) {
+      if (element.address == city && element.price >= firstPrice && element.price <= secondPrice) {
+        array.push(element);
+      }
     }
   }
-  // prises.sort(function(a, b){return a - b});
-  res.json(plases);
-  // console.log(plases);
+  res.json(array);
 }
 
 //http://localhost:3002/addUser
@@ -127,10 +141,10 @@ function deletUserHandller(req,res){
 
 
 //Constructor
-function HomeData(property_id,webUrl,address,prop_status, price, beds, baths, photo) {
+function HomeData(property_id, webUrl, address, prop_status, price, beds, baths, photo) {
   this.id = property_id;
-  this.webUrl=webUrl;
-  this.address=address;
+  this.webUrl = webUrl;
+  this.address = address;
   this.status = prop_status;
   this.price = price;
   this.beds = beds;
@@ -208,10 +222,10 @@ client.connect().then(()=>{
 
 
 
-function HomeData(property_id,webUrl,address,prop_status, price, beds, baths, photo) {
+function HomeData(property_id, webUrl, address, prop_status, price, beds, baths, photo) {
   this.id = property_id;
-  this.webUrl=webUrl;
-  this.address=address;
+  this.webUrl = webUrl;
+  this.address = address;
   this.status = prop_status;
   this.price = price;
   this.beds = beds;
