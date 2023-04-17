@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const PORT = 3018
+const PORT = 3021
 require('dotenv').config();
 const { Client } = require('pg');
 const client = new Client(process.env.DATABASE_URL)
@@ -25,7 +25,8 @@ app.get('/getUsers', getUsersHandler);
 app.put('/updateUser/:id', updateUserHandller)
 app.delete('/deleteUser/:id', deletUserHandller);
 //app.put('/updatecomment/:KEY',updatecommentHandller);
-
+app.get('/getInfo/:id', profileInfoHandler);
+app.post('/addComment',addCommentHandler)
 
 
 function getHomeHandler(req, res) {
@@ -136,7 +137,33 @@ function deletUserHandller(req, res) {
     console.log(err)
   });
 }
+function profileInfoHandler(req,res) {
+  let { id } = req.params;
+  let sql = 'SELECT * FROM Users WHERE id=$1;'
+  let values = [id];
+  client.query(sql, values).then(result => {
+    res.status(201).send(result.rows)
+  }).catch(err => {
+    console.log(err)
+  });
+}
+function addCommentHandler(req,res)
+{
+  let { user_id, Home_id, comment } = req.body //destructuring
+  console.log(req.body)
+  let sql = `INSERT INTO Comment (user_id,Home_id,comment)
+    VALUES ($1,$2,$3) RETURNING *;`
+  let values = [user_id, Home_id, comment]
+  client.query(sql, values).then((result) => {
+    console.log(result.rows);
+    res.status(201).json(result.rows);
 
+  })
+    .catch(err => {
+      console.log(err)
+    });
+  
+}
 //Constructor
 function HomeData(property_id, webUrl, address, prop_status, price, beds, baths, photo) {
   this.id = property_id;
