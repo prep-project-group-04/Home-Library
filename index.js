@@ -1,16 +1,13 @@
 const express = require('express')
 const app = express()
-const PORT = 3003
+const PORT = 3018
 require('dotenv').config();
-const {Client}=require('pg');
-const client =new Client(process.env.DATABASE_URL)
+const { Client } = require('pg');
+const client = new Client(process.env.DATABASE_URL)
 
 const cors = require('cors');
 app.use(cors());
 const axios = require("axios");
-const { Client } = require('pg');
-const url = process.env.DataURL;
-const client = new Client(url);
 // const bodyParser = require('body-parser')
 // app.use(bodyParser.urlencoded({ extended: false }))
 // app.use(bodyParser.json())
@@ -22,11 +19,11 @@ let data = require('./home.json');
 
 
 app.get('/', getHomeHandler);
-app.get('/filter',filterHandler);
-app.post('/addUser',addUserHandller);
-app.get('/getUsers',getUsersHandler);
-app.put('/updateUser/:id',updateUserHandller)
-app.delete('/deleteUser/:id',deletUserHandller);
+app.get('/filter', filterHandler);
+app.post('/addUser', addUserHandller);
+app.get('/getUsers', getUsersHandler);
+app.put('/updateUser/:id', updateUserHandller)
+app.delete('/deleteUser/:id', deletUserHandller);
 //app.put('/updatecomment/:KEY',updatecommentHandller);
 
 
@@ -88,59 +85,57 @@ function filterHandler(req, res) {
 }
 
 //http://localhost:3002/addUser
-function addUserHandller(req,res){ 
-  let {fullName,Email,password}=req.body //destructuring
+function addUserHandller(req, res) {
+  let { fullName, Email, password } = req.body //destructuring
   console.log(req.body)
-let sql=`INSERT INTO users (fullName,Email,password)
-VALUES($1,$2,$3) RETURNING *;`
-let values=[fullName,Email,password]
- client.query(sql,values).then((result)=>{
-console.log(result.rows)
-//res.send("add succfly")
- res.status(201).json(result.rows);
+  let sql = `INSERT INTO users (fullName,Email,password)
+      VALUES($1,$2,$3) RETURNING *;`
+  let values = [fullName, Email, password]
+  client.query(sql, values).then((result) => {
+    console.log(result.rows)
+    //res.send("add succfly")
+    res.status(201).json(result.rows);
 
- })
- .catch(err=>{
-  console.log(err)
- });
+  })
+    .catch(err => {
+      console.log(err)
+    });
 }
 
 //http://localhost:3002/getUsers
-function getUsersHandler (req,res){
-  let sql=`SELECT * FROM Users;`;
-  client.query(sql).then((result)=>{
-  //  res.send("get succfly")
-   //console.log(result.rows)
-      res.json(result.rows);
-  }) .catch(err=>{
+function getUsersHandler(req, res) {
+  let sql = `SELECT * FROM Users;`;
+  client.query(sql).then((result) => {
+    //  res.send("get succfly")
+    //console.log(result.rows)
+    res.json(result.rows);
+  }).catch(err => {
     console.log(err)
-   });
+  });
 }
 
-function updateUserHandller(req,res){
-  let userId=req.params.id;
-  let {fullName,Email,password}=req.body;
-  let sql=`UPDATE Users SET fullName = $1, Email=$2, password=$3
+function updateUserHandller(req, res) {
+  let userId = req.params.id;
+  let { fullName, Email, password } = req.body;
+  let sql = `UPDATE Users SET fullName = $1, Email=$2, password=$3
   WHERE id=$4 RETURNING *;`
-  let values=[fullName,Email,password,userId];
-  client.query(sql,values).then(result=>{
-      res.send(result.rows)
-  }).catch(err=>{consolo.log(err)})
+  let values = [fullName, Email, password, userId];
+  client.query(sql, values).then(result => {
+    res.send(result.rows)
+  }).catch(err => { consolo.log(err) })
 }
 
-function deletUserHandller(req,res){
-  let {id}=req.params;
-  let sql=`DELETE FROM Users WHERE id=$1;`
-  let values=[id];
-  client.query(sql,values).then(result=>{
-     //res.send("delet succfly")
-      res.status(204).send("delete")
-  }).catch(err=>{
+function deletUserHandller(req, res) {
+  let { id } = req.params;
+  let sql = `DELETE FROM Users WHERE id=$1;`
+  let values = [id];
+  client.query(sql, values).then(result => {
+    //res.send("delet succfly")
+    res.status(204).send("delete")
+  }).catch(err => {
     console.log(err)
-   });
+  });
 }
-
-
 
 //Constructor
 function HomeData(property_id, webUrl, address, prop_status, price, beds, baths, photo) {
@@ -155,54 +150,9 @@ function HomeData(property_id, webUrl, address, prop_status, price, beds, baths,
 }
 
 
-//LOGIN (AUTHENTICATE USER)
-app.post("/loginAuthanication",loginAuthHandler)
-function loginAuthHandler(req,res)
-{ let id=req.query.id
-  const email = req.query.Email;
-  const password = req.query.Password;
-  let sql='SELECT Email,Password FROM Users WHERE Email=$2,Password=$3'
-  if(email==Email && password==Password)
-  {
-    res.send(` login successfull with ${id}`)
-  }
-}
-  
-  
 
-
-
-
-//forgetPassword
-app.post('/reset', resetPasswordHandler);
-
-function resetPasswordHandler(req,res) {
-  // Get the email entered by the user
-  let email=req.body.email
-
-  // Check if the email is valid (you can add more validation if needed)
-  if (!validateEmail(email)) {
-    alert("Please enter a valid email address.");
-    return;
-  }
-
-  // Send a request to reset the password
-  var xhr = new XMLHttpRequest();       //this help send a request to the server
-  xhr.open("POST", "reset-password.php");
-  xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.onload = function () {
-    if (xhr.status === 200) {
-      alert("A password reset link has been sent to your email address.");
-    } else {
-      alert("An error occurred while resetting your password.");
-    }
-  };
-  xhr.send(JSON.stringify({ email: email }));
-}
-
-
-app.use(error404);
 //handle error 404
+app.use(error404);
 function error404(req, res) {
   return res.status(404).json({ status: 404, responseText: "page not found error" });
 }
@@ -211,8 +161,8 @@ function errorHandler(err, req, res) {
   return res.status(500).json({ status: 500, responseText: "ERROR 500" });
 }
 
-client.connect().then(()=>{
-  app.listen(PORT,()=>{console.log("hello" ,PORT);})
+client.connect().then(() => {
+  app.listen(PORT, () => { console.log("hello", PORT); })
 
 }).catch()
 
