@@ -8,9 +8,6 @@ const client = new Client(process.env.DATABASE_URL)
 const cors = require('cors');
 app.use(cors());
 const axios = require("axios");
-// const { Client } = require('pg');
-// const url = process.env.DataURL;
-// const client = new Client(url);
 // const bodyParser = require('body-parser')
 // app.use(bodyParser.urlencoded({ extended: false }))
 // app.use(bodyParser.json())
@@ -31,13 +28,14 @@ app.delete('/deleteUser/:id', deletUserHandller);
 //app.put('/updatecomment/:KEY',updatecommentHandller);
 
 
-
 function getHomeHandler(req, res) {
+  const city = req.query.city;
+
   const options = {
     method: 'GET',
     url: `${url}`,
     params: {
-      city: 'New York City',
+      city,
       state_code: 'NY',
       offset: '0',
       limit: '200',
@@ -61,32 +59,21 @@ function getHomeHandler(req, res) {
 function filterHandler(req, res) {
   let price = req.query.price;
   let city = req.query.city;
-  price = price.split('-');
-  firstPrice = price[0].slice(0, price[0].length - 1);
-  firstPrice = parseInt(firstPrice) * 1000;
-  secondPrice = price[1].slice(0, price[1].length - 1);
-  secondPrice = parseInt(secondPrice) * 1000;
-  let array = [];
-  for (let i = 0; i < data.length; i++) {
-    const element = data[i];
-    if (price == "noChoice") {
-      if (element.address == city) {
-        array.push((element));
-      }
-    }
-    else if (city == "noChoice") {
-      if (element.price >= firstPrice && element.price <= secondPrice) {
-        array.push(element)
-      }
-    }
-    else if (!(price == "noChoice" && city == "noChoice")) {
-      if (element.address == city && element.price >= firstPrice && element.price <= secondPrice) {
-        array.push(element);
-      }
-    }
+  if (price !== "noChoice" && city !== "noChoice") {
+    price = price.split('-');
+    firstPrice = parseInt(price[0].replace(/[^\d]+/g, '')) * 1000;
+    secondPrice = parseInt(price[1].replace(/[^\d]+/g, '')) * 1000;
+
+    let array = data.filter(element => {
+      return element.address === city && element.price >= firstPrice && element.price <= secondPrice;
+    });
+
+    res.json(array);
+  } else {
+    res.json([]);
   }
-  res.json(array);
 }
+
 
 function isValidEmail(email) {
   const regex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
@@ -159,10 +146,10 @@ function getUsersHandler(req, res) {
 
 function updateUserHandller(req, res) {
   let userId = req.params.id;
-  let { fullName, Email, password } = req.body;
-  let sql = `UPDATE Users SET fullName = $1, Email=$2, password=$3
+  let { fullName, email, password } = req.body;
+  let sql = `UPDATE Users SET fullName = $1, email=$2, password=$3
   WHERE id=$4 RETURNING *;`
-  let values = [fullName, Email, password, userId];
+  let values = [fullName, email, password, userId];
   client.query(sql, values).then(result => {
     res.send(result.rows)
   }).catch(err => {
@@ -236,18 +223,12 @@ function loginAuthHandler(req, res) {
     });
 }
 
-
-
-
-
-
-
 //forgetPassword
 app.post('/reset', resetPasswordHandler);
 
-function resetPasswordHandler(req, res) {
+function resetPasswordHandler(req,res) {
   // Get the email entered by the user
-  let email = req.body.email
+  let email=req.body.email
 
   // Check if the email is valid (you can add more validation if needed)
   if (!validateEmail(email)) {
@@ -269,7 +250,6 @@ function resetPasswordHandler(req, res) {
   xhr.send(JSON.stringify({ email: email }));
 }
 
-
 app.use(error404);
 //handle error 404
 function error404(req, res) {
@@ -287,14 +267,3 @@ client.connect().then(() => {
 }).catch(err => {
   console.log(`Failed to listen on port ${PORT} because of error: ${err}`);
 })
-
-function HomeData(property_id, webUrl, address, prop_status, price, beds, baths, photo) {
-  this.id = property_id;
-  this.webUrl = webUrl;
-  this.address = address;
-  this.status = prop_status;
-  this.price = price;
-  this.beds = beds;
-  this.baths = baths;
-  this.photo = photo;
-}
