@@ -1,22 +1,22 @@
 const express = require('express')
 const app = express()
-const port = 3002;
+const port = 3020;
 require('dotenv').config();
 const cors = require('cors');
 app.use(cors());
 const axios = require("axios");
-// const { Client } = require('pg');
-// const client = new Client(URL);
+const { Client } = require('pg');
+const url = process.env.DataURL;
+const client = new Client(url);
 const apikey = process.env.API_KEY;
 const hostKey = process.env.HOST_KEY;
-const url = process.env.URL;
+// const url = process.env.URL;
 let data = require('./home.json');
 
 
 
 app.get('/', getHomeHandler);
 app.get('/filter', filterHandler);
-app.use(error404);
 
 
 
@@ -90,6 +90,60 @@ function HomeData(property_id, webUrl, address, prop_status, price, beds, baths,
   this.baths = baths;
   this.photo = photo;
 }
+
+
+
+
+
+
+
+//LOGIN (AUTHENTICATE USER)
+app.post("/loginAuthanication",loginAuthHandler)
+function loginAuthHandler(req,res)
+{ let id=req.query.id
+  const email = req.query.Email;
+  const password = req.query.Password;
+  let sql='SELECT Email,Password FROM Users WHERE Email=$2,Password=$3'
+  if(email==Email && password==Password)
+  {
+    res.send(` login successfull with ${id}`)
+  }
+}
+  
+  
+
+
+
+
+//forgetPassword
+app.post('/reset', resetPasswordHandler);
+
+function resetPasswordHandler(req,res) {
+  // Get the email entered by the user
+  let email=req.body.email
+
+  // Check if the email is valid (you can add more validation if needed)
+  if (!validateEmail(email)) {
+    alert("Please enter a valid email address.");
+    return;
+  }
+
+  // Send a request to reset the password
+  var xhr = new XMLHttpRequest();       //this help send a request to the server
+  xhr.open("POST", "reset-password.php");
+  xhr.setRequestHeader("Content-Type", "application/json");
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      alert("A password reset link has been sent to your email address.");
+    } else {
+      alert("An error occurred while resetting your password.");
+    }
+  };
+  xhr.send(JSON.stringify({ email: email }));
+}
+
+
+app.use(error404);
 //handle error 404
 function error404(req, res) {
   return res.status(404).json({ status: 404, responseText: "page not found error" });
@@ -98,57 +152,6 @@ function error404(req, res) {
 function errorHandler(err, req, res) {
   return res.status(500).json({ status: 500, responseText: "ERROR 500" });
 }
-
-
-
-
-// //loginValidateForm
-app.get('/valid', validateForm)
-function validateForm() {
-  // Get the value of the input field with id="email"
-  var email = document.getElementById("email").value;
-  // Get the value of the input field with id="password"
-  var password = document.getElementById("password").value;
-  // Regular expression to check if the email is in the correct format
-  var emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  // Check if the email is empty
-  if (email == "") {
-    alert("Email field must be filled out");
-    return false;
-  }
-  // Check if the email is in the correct format
-  if (!email.match(emailRegex)) {
-    alert("Please enter a valid email address");
-    return false;
-  }
-  // Check if the password is empty
-  if (password == "") {
-    alert("Password field must be filled out");
-    return false;
-  }
-}
-
-//loginVerification
-app.get('/verfication',loginVerification)
-function loginVerification() {
-  const userName = req.query.userName;
-  const passWord = req.query.passWord;
-  if (userName == userName && passWord == passWord) {
-    res.send("login successfully")
-  }
-  else 
-  {
-    res.send("Please ! Enter valid UserName Or Password")
-  }
-}
-
-
-
-
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
