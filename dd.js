@@ -19,6 +19,7 @@ const apikey = process.env.API_KEY;
 const hostKey = process.env.HOST_KEY;
 // const url = process.env.URL;
 let data = require('./home.json');
+
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
 
@@ -88,63 +89,34 @@ function filterHandler(req, res) {
   res.json(array);
 }
 
-function isValidEmail(email) {
-  const regex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
-  return regex.test(email);
-}
-
+//http://localhost:3002/addUser
 function addUserHandller(req, res) {
+  // Changed variable names to lowercase
   let { fullName, email, password } = req.body; // Destructuring
 
   console.log(req.body);
-
-  // Check if the email is valid
-  if (!isValidEmail(email)) {
-    res.status(400).json({ error: "Invalid email format." });
-    return;
-  }
-
-  // Check if the email already exists in the database
-  let checkEmailSql = 'SELECT email FROM Users WHERE email=$1';
-  let checkEmailValues = [email];
-
-  client.query(checkEmailSql, checkEmailValues)
-    .then(result => {
-      if (result.rows.length > 0) {
-        res.status(409).json({ error: "Email already in use." });
-        return;
-      }
-
-      // Hash the password using bcrypt
-      bcrypt.hash(password, saltRounds, (err, hash) => {
-        if (err) {
-          console.error(err);
-          res.status(500).json({ error: "An error occurred while hashing the password." });
-          return;
-        }
-
-        let sql = `INSERT INTO users (fullName, email, password)
-VALUES($1, $2, $3) RETURNING *;`;
-        let values = [fullName, email, hash]; // Store the hashed password
-
-        client.query(sql, values)
-          .then((result) => {
-            console.log(result.rows);
-            res.status(201).json(result.rows);
-          })
-          .catch(err => {
-            console.error(err);
-            res.status(500).json({ error: "An error occurred while adding the user." });
-          });
-      });
-    })
-    .catch(err => {
+  // Hash the password using bcrypt
+  bcrypt.hash(password, saltRounds, (err, hash) => {
+    if (err) {
       console.error(err);
-      res.status(500).json({ error: "An error occurred while checking for existing email." });
-    });
+      res.status(500).json({ error: "An error occurred while hashing the password." });
+      return;
+    }
+    let sql = `INSERT INTO users (fullName, email, password)
+VALUES($1, $2, $3) RETURNING *;`;
+    let values = [fullName, email, hash]; // Store the hashed password
+
+    client.query(sql, values)
+      .then((result) => {
+        console.log(result.rows);
+        res.status(201).json(result.rows);
+      })
+      .catch(err => {
+        console.error(err);
+        res.status(500).json({ error: "An error occurred while adding the user." });
+      });
+  });
 }
-
-
 
 
 //http://localhost:3002/getUsers
@@ -205,43 +177,14 @@ function HomeData(property_id, webUrl, address, prop_status, price, beds, baths,
 //LOGIN (AUTHENTICATE USER)
 app.post("/loginAuthanication", loginAuthHandler)
 function loginAuthHandler(req, res) {
+  let id = req.query.id
   const email = req.query.Email;
   const password = req.query.Password;
-
-  // Select the user with the matching email
-  let sql = 'SELECT id, email, password FROM Users WHERE email=$1';
-  let values = [email];
-
-  client.query(sql, values)
-    .then(result => {
-      if (result.rows.length > 0) {
-        const user = result.rows[0];
-        const hashedPassword = user.password;
-
-        // Compare the plain-text password with the hashed password
-        bcrypt.compare(password, hashedPassword, (err, isMatch) => {
-          if (err) {
-            console.error(err);
-            res.status(500).json({ error: "An error occurred while comparing the passwords." });
-            return;
-          }
-
-          if (isMatch) {
-            res.send(`Login successful with ${user.id}`);
-          } else {
-            res.status(401).json({ error: "Invalid email or password." });
-          }
-        });
-      } else {
-        res.status(401).json({ error: "Invalid email or password." });
-      }
-    })
-    .catch(err => {
-      console.error(err);
-      res.status(500).json({ error: "An error occurred while authenticating the user." });
-    });
+  let sql = 'SELECT Email,Password FROM Users WHERE Email=$2,Password=$3'
+  if (email == Email && password == Password) {
+    res.send(` login successfull with ${id}`)
+  }
 }
-
 
 
 
@@ -293,6 +236,58 @@ client.connect().then(() => {
 }).catch(err => {
   console.log(`Failed to listen on port ${PORT} because of error: ${err}`);
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 function HomeData(property_id, webUrl, address, prop_status, price, beds, baths, photo) {
   this.id = property_id;
