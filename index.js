@@ -144,9 +144,6 @@ VALUES($1, $2, $3) RETURNING *;`;
     });
 }
 
-
-
-
 //http://localhost:3002/getUsers
 function getUsersHandler(req, res) {
   let sql = `SELECT * FROM Users;`;
