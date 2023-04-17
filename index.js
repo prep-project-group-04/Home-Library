@@ -1,22 +1,29 @@
 const express = require('express')
 const app = express()
-const port = 3000;
+const PORT = 3003
 require('dotenv').config();
+const {Client}=require('pg');
+const client =new Client(process.env.DATABASE_URL)
+
 const cors = require('cors');
 app.use(cors());
-const axios = require("axios");
-// const { Client } = require('pg');
-// const client = new Client(URL);
+// const bodyParser = require('body-parser')
+// app.use(bodyParser.urlencoded({ extended: false }))
+// app.use(bodyParser.json())
+app.use(express.json());
+const axios = require('axios');
 const apikey = process.env.API_KEY;
 const hostKey=process.env.HOST_KEY;
-const url = process.env.URL;
 let data=require('./home.json');
-
 
 
 app.get('/', getHomeHandler);
 app.get('/filter',filterHandler);
-app.delete('/DELETE/:id',deletUserHandller)
+app.post('/addUser',addUserHandller);
+app.get('/getUsers',getUsersHandler);
+app.put('/updateUser/:id',updateUserHandller)
+app.delete('/deleteUser/:id',deletUserHandller);
+//app.put('/updatecomment/:KEY',updatecommentHandller);
 app.use(error404);
 
 
@@ -63,6 +70,62 @@ function filterHandler(req,res){
   res.json(plases);
   // console.log(plases);
 }
+
+//http://localhost:3002/addUser
+function addUserHandller(req,res){ 
+  let {fullName,Email,password}=req.body //destructuring
+  console.log(req.body)
+let sql=`INSERT INTO users (fullName,Email,password)
+VALUES($1,$2,$3) RETURNING *;`
+let values=[fullName,Email,password]
+ client.query(sql,values).then((result)=>{
+console.log(result.rows)
+//res.send("add succfly")
+ res.status(201).json(result.rows);
+
+ })
+ .catch(err=>{
+  console.log(err)
+ });
+}
+
+//http://localhost:3002/getUsers
+function getUsersHandler (req,res){
+  let sql=`SELECT * FROM Users;`;
+  client.query(sql).then((result)=>{
+  //  res.send("get succfly")
+   //console.log(result.rows)
+      res.json(result.rows);
+  }) .catch(err=>{
+    console.log(err)
+   });
+}
+
+function updateUserHandller(req,res){
+  let userId=req.params.id;
+  let {fullName,Email,password}=req.body;
+  let sql=`UPDATE Users SET fullName = $1, Email=$2, password=$3
+  WHERE id=$4 RETURNING *;`
+  let values=[fullName,Email,password,userId];
+  client.query(sql,values).then(result=>{
+      res.send(result.rows)
+  }).catch(err=>{consolo.log(err)})
+}
+
+function deletUserHandller(req,res){
+  let {id}=req.params;
+  let sql=`DELETE FROM Users WHERE id=$1;`
+  let values=[id];
+  client.query(sql,values).then(result=>{
+     //res.send("delet succfly")
+      res.status(204).send("delete")
+  }).catch(err=>{
+    console.log(err)
+   });
+}
+
+
+
 //Constructor
 function HomeData(property_id,webUrl,address,prop_status, price, beds, baths, photo) {
   this.id = property_id;
@@ -88,22 +151,10 @@ app.get('/', (req, res) => {
   res.send('Hello World!')
 })
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+client.connect().then(()=>{
+  app.listen(PORT,()=>{console.log("hello" ,PORT);})
 
-
-
-function deletUserHandller(req,res){
-  let {id}=req.params;
-  let sql=`DELETE FROM Users WHERE id=$1;`
-  let values=[id];
-  client.query(sql,values).then(result=>{
-      res.status(204).send("delete")
-  }).catch(function (error) {
-    errorHandler(error, req, res);
-  });
-}
+}).catch()
 
 
 
