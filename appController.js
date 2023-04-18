@@ -57,9 +57,7 @@ function sendEmailHandeler (req, res) {
     }
   
     transporter.sendMail(message).then(() => {
-        return res.status(201).json({
-            msg: "you should receive an email",yourCode:code
-        })
+        return res.status(201).json({yourCode:code})
     }).catch(error => {
         return res.status(500).json({ error })
     })

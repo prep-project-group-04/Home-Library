@@ -12,38 +12,35 @@ app.use(express.json());
 const apikey = process.env.API_KEY;
 const hostKey = process.env.HOST_KEY;
 const url = process.env.URL;
-let data = require('./home.json');
 const bcrypt = require('bcrypt');
 //router
 //imports the router module from ./router.js file
-const appRoute = require('./router.js')
+const appRoute = require('./router.js');
 //middleware function that will handle any incoming requests to the '/api' endpoint.
 app.use('/api', appRoute);
-//
 const saltRounds = 10;
 app.get('/', getHomeHandler);
 app.get('/filter', filterHandler);
 app.post('/addUser', addUserHandller);
 app.get('/getUsers', getUsersHandler);
-app.put('/updateUser/:id', updateUserHandller);
-app.delete('/deleteUser/:id', deletUserHandller);
-app.put('/updateComment',updateCommentHandller)
-app.get('/getInfo/:id', profileInfoHandler);
-app.post('/addComment',addCommentHandler);
-app.get('/getFav',getFavHandler);
+app.put('/updateUser', updateUserHandller);
+app.delete('/deleteUser', deletUserHandller);
+app.put('/updateComment', updateCommentHandller)
+app.get('/getInfo', profileInfoHandler);
+app.post('/addComment', addCommentHandler);
+app.get('/getFav', getFavHandler);
 app.post("/loginAuthanication", loginAuthHandler);
-app.get("/email",emailHandeler)
-app.get('/codeChecker',codeCheckerHandller);
-app.use(error404);
-
+app.post('/restPassword',restPassword);
+app.put("/updatePass",updatePassword);
+app.delete("/deleteComment",deleteComment);
+app.use('*',error404);
 
 function getHomeHandler(req, res) {
-  const city = req.query.city;
   const options = {
     method: 'GET',
     url: `${url}`,
     params: {
-      city,
+      city: "New York City",
       state_code: 'NY',
       offset: '0',
       limit: '200',
@@ -58,48 +55,103 @@ function getHomeHandler(req, res) {
     let result = response.data.properties.map((element) => {
       return new HomeData(element.property_id, element.rdc_web_url, element.address.city, element.prop_status, element.price, element.beds, element.baths, element.thumbnail)
     });
+    data = result;
     res.json(result);
   }).catch(function (error) {
     errorHandler(error, req, res);
   });
 }
+function parsePrice(priceStr) {
+  let multiplier = 1;
+  let lastChar = priceStr[priceStr.length - 1];
+
+  if (lastChar === 'k') {
+    multiplier = 1000;
+    priceStr = priceStr.slice(0, -1);
+  } else if (lastChar === 'm') {
+    multiplier = 1000000;
+    priceStr = priceStr.slice(0, -1);
+  }
+  return parseFloat(priceStr) * multiplier;
+}
+
 
 function filterHandler(req, res) {
-  let price = req.query.price;
-  let city = req.query.city;
-  if (price !== "noChoice" && city !== "noChoice") {
-    price = price.split('-');
-    firstPrice = parseInt(price[0].replace(/[^\d]+/g, '')) * 1000;
-    secondPrice = parseInt(price[1].replace(/[^\d]+/g, '')) * 1000;
-  let array = data.filter(element => {
-      return element.address === city && element.price >= firstPrice && element.price <= secondPrice;
+  const options = {
+    method: 'GET',
+    url: `${url}`,
+    params: {
+      city: "New York City",
+      state_code: 'NY',
+      offset: '0',
+      limit: '200',
+      sort: 'relevance'
+    },
+    headers: {
+      'X-RapidAPI-Key': `${apikey}`,
+      'X-RapidAPI-Host': `${hostKey}`
+    }
+  };
+  axios.request(options).then(function (response) {
+    let result = response.data.properties.map((element) => {
+      return new HomeData(element.property_id, element.rdc_web_url, element.address.city, element.prop_status, element.price, element.beds, element.baths, element.thumbnail)
     });
-
+    let price = req.query.price;
+    let city = req.query.city;
+    let array = [];
+    for (let i = 0; i < result.length; i++) {
+      const element = result[i];
+      if (price == "noChoice") {
+        if (element.address == city) {
+          array.push((element));
+        }
+      }
+      else if (city == "noChoice") {
+        let price2='949k-1.7m';
+        price = price2.split('-');
+        firstPrice = parsePrice(price[0]);
+        secondPrice = parsePrice(price[1]);
+        if (element.price >= firstPrice && element.price <= secondPrice) {
+          array.push(element)
+        }
+      }
+      else if (!(price == "noChoice" && city == "noChoice")) {
+        if (element.address == city && element.price >= firstPrice && element.price <= secondPrice) {
+          array.push(element);
+        }
+      }
+    }
     res.json(array);
-  } else {
-    res.json([]);
-  }
+
+  }).catch(function (error) {
+    // errorHandler(error, req, res);
+    console.log(error)
+  });
 }
 
 
-
-//LOGIN (AUTHENTICATE USER)
-function loginAuthHandler(req, res) {
-  const email = req.body.email;
-  const password = req.body.password;
-  let values = [email];
-  let sql = `SELECT * FROM Users WHERE Email=$1`;
-  client.query(sql, values).then((result) => {
-    if (result.rows[0].password == password) {
-      res.status(201).json(result.rows[0].id)
+function restPassword(req,res){
+  let {email}=req.body;
+  let values=[email];
+  let url=`SELECT * FROM Users WHERE Email=$1`;
+  client.query(url,values).then((result)=>{
+    if(result.rows.length==0){
+      res.send('false')
     }
-    else {
-      res.status(505).json('rong password');
+    else{
+      axios.post('http://localhost:3021/api/sendEmail', {
+        email: `${email}`
+      }).then(function (response) {
+        res.status(201).send(response.data.yourCode);
+      }).catch(function (error) {
+        res.status(505).send(error);
+      });
     }
-  }).catch((err) => {
-    res.status(505).json('No account');
+  }).catch((err)=>{
+    res.send(err)
   })
 }
+
 
 function isValidEmail(email) {
   const regex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
@@ -110,6 +162,7 @@ function addUserHandller(req, res) {
   let { fullName, email, password } = req.body; // Destructuring
 
   console.log(req.body);
+
   // Add length restrictions
   const maxNameLength = 25;
   const maxEmailLength = 50;
@@ -162,7 +215,6 @@ VALUES($1, $2, $3) RETURNING *;`;
 
         client.query(sql, values)
           .then((result) => {
-            console.log(result.rows);
             res.status(201).json(result.rows);
           })
           .catch(err => {
@@ -174,40 +226,62 @@ VALUES($1, $2, $3) RETURNING *;`;
     .catch(err => {
       console.error(err);
       res.status(500).json({ error: "An error occurred while checking for existing email." });
-
-
-function emailHandeler (req,res){
-  let sql=`SELECT Email FROM Users;`;
-  client.query(sql).then((result)=>{
-      res.json(result.rows);
-  }).catch();
-}
-
-function codeCheckerHandller(req,res){ 
-  let sql=`SELECT code FROM Crypto;`;
-  client.query(sql).then((result)=>{
-      res.json(result.rows);
-  }).catch();
-}
-
-//http://localhost:3002/addUser
-function addUserHandller(req, res) {
-  let { fullName, Email, password } = req.body //destructuring
-  console.log(req.body)
-  let sql = `INSERT INTO users (fullName,Email,password)
-      VALUES($1,$2,$3) RETURNING *;`
-  let values = [fullName, Email, password]
-  client.query(sql, values).then((result) => {
-    console.log(result.rows)
-    //res.send("add succfly")
-    res.status(201).json(result.rows);
-
-  })
-    .catch(err => {
-      console.log(err)
     });
 }
 
+
+//LOGIN (AUTHENTICATE USER)
+function loginAuthHandler(req, res) {
+  const { email, password } = req.body;
+  let values = [email];
+  let sql = 'SELECT * FROM Users WHERE Email=$1';
+
+  if (isValidEmail(email)) {
+    client
+      .query(sql, values)
+      .then((result) => {
+        // Use bcrypt.compare to compare the plain text password with the hashed password
+        bcrypt.compare(password, result.rows[0].password, (err, isMatch) => {
+          if (err) {
+            res.status(500).json('Error comparing passwords');
+          } else {
+            if (isMatch) {
+              res.status(201).json(result.rows[0].id);
+            } else {
+              res.status(505).json('rong password');
+            }
+          }
+        });
+      })
+      .catch((err) => {
+        res.status(505).json('No account');
+      });
+  } else {
+    res.status(500).json('Try Other Way Haker');
+  }
+}
+
+function updatePassword(req, res) {
+  let { email, newPass } = req.body;
+  bcrypt.hash(newPass, 10, (err, hashedPassword) => {
+    if (err) {
+      res.status(500).send('Error hashing password');
+    } else {
+      let sql = 'UPDATE Users SET password=$1 WHERE Email=$2';
+      let values = [hashedPassword, email];
+      client
+        .query(sql, values)
+        .then((result) => {
+          res.status(201).json('The password updated');
+        })
+        .catch((err) => {
+          res.status(500).send(err);
+        });
+    }
+  });
+}
+
+  
 //http://localhost:3002/getUsers
 function getUsersHandler(req, res) {
   let sql = `SELECT * FROM Users;`;
@@ -216,10 +290,12 @@ function getUsersHandler(req, res) {
     //console.log(result.rows)
     res.json(result.rows);
   }).catch(err => {
+    errorHandler(err, req.res)
+  });
+}
 
 function updateUserHandller(req, res) {
-  let userId = req.params.id;
-  let { fullName, email, password } = req.body;
+  let { userId,fullName, email, password } = req.body;
   let sql = `UPDATE Users SET fullName = $1, email=$2, password=$3
   WHERE id=$4 RETURNING *;`
   let values = [fullName, email, password, userId];
@@ -229,27 +305,33 @@ function updateUserHandller(req, res) {
     console.error(err);
     res.status(500).json({ error: "An error occurred while updating the user." });
   });
-    console.log(err)
-  });
-}
-
 }
 
 function deletUserHandller(req, res) {
-  let { id } = req.params;
+  let { id } = req.body;
   let sql = `DELETE FROM Users WHERE id=$1;`
   let values = [id];
   client.query(sql, values).then(result => {
-    //res.send("delet succfly")
     res.status(204).send("delete")
   }).catch(err => {
     console.log(err)
   });
 }
 
+function deleteComment(req,res){
+  let {Home_id,user_id}=req.body;
+  let sql=`DELETE FROM Comment WHERE Home_id=$1 AND user_id=$2`;
+  let values=[Home_id,user_id];
+  client.query(sql,values).then((result)=>{
+    res.status(201).send("Data deleted");
+  }).catch((err)=>{
+    console.log(err)
+    res.status(500).json("comment dosent exist");
+  })
+}
 
-function profileInfoHandler(req,res) {
-  let { id } = req.params;
+function profileInfoHandler(req, res) {
+  let { id } = req.body;
   let sql = 'SELECT * FROM Users WHERE id=$1;'
   let values = [id];
   client.query(sql, values).then(result => {
@@ -259,59 +341,37 @@ function profileInfoHandler(req,res) {
   });
 }
 
-
-function addCommentHandler(req,res){
+function addCommentHandler(req, res) {
   let { user_id, Home_id, comment } = req.body //destructuring
   console.log(req.body)
   let sql = `INSERT INTO Comment (user_id,Home_id,comment)
     VALUES ($1,$2,$3) RETURNING *;`
   let values = [user_id, Home_id, comment]
   client.query(sql, values).then((result) => {
-    console.log(result.rows);
-    res.status(201).json(result.rows);
-
-  })
-    .catch(err => {
-      console.log(err)
-    });
-  
-}
-
-
-function addCommentHandler(req,res)
-{
-  let { user_id, Home_id, comment } = req.body //destructuring
-  console.log(req.body)
-  let sql = `INSERT INTO Comment (user_id,Home_id,comment)
-    VALUES ($1,$2,$3) RETURNING *;`
-  let values = [user_id, Home_id, comment]
-  client.query(sql, values).then((result) => {
-    console.log(result.rows);
     res.status(201).json(result.rows);
   })
     .catch(err => {
       console.log(err)
     });
+
 }
 
-function getFavHandler (req,res){
+function getFavHandler(req, res) {
   let sql = 'SELECT * FROM Comment';
-  client.query(sql).then(result=>{
+  client.query(sql).then(result => {
     res.json(result.rows)
   })
 }
 
+function updateCommentHandller(req, res) {
 
-
-function updateCommentHandller (req,res) {
-
-    let {user_id,Home_id,comment}=req.body;
-    let sql=`UPDATE Comment SET comment=$1
+  let { user_id, Home_id, comment } = req.body;
+  let sql = `UPDATE Comment SET comment=$1
     WHERE Home_id=$2 AND user_id=$3 RETURNING *;`
-    let values=[comment,Home_id,user_id];
-    client.query(sql,values).then(result=>{
-        res.send(result.rows)
-    }).catch(err => {console.log(err)})
+  let values = [comment, Home_id, user_id];
+  client.query(sql, values).then(result => {
+    res.send(result.rows)
+  }).catch(err => { console.log(err) })
 
 }
 
