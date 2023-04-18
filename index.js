@@ -8,13 +8,10 @@ const client = new Client(process.env.DATABASE_URL)
 const cors = require('cors');
 app.use(cors());
 const axios = require("axios");
-// const bodyParser = require('body-parser')
-// app.use(bodyParser.urlencoded({ extended: false }))
-// app.use(bodyParser.json())
 app.use(express.json());
 const apikey = process.env.API_KEY;
 const hostKey = process.env.HOST_KEY;
-// const url = process.env.URL;
+const url = process.env.URL;
 let data = require('./home.json');
 
 
@@ -24,9 +21,10 @@ app.post('/addUser', addUserHandller);
 app.get('/getUsers', getUsersHandler);
 app.put('/updateUser/:id', updateUserHandller)
 app.delete('/deleteUser/:id', deletUserHandller);
-//app.put('/updatecomment/:KEY',updatecommentHandller);
+app.put('/updateComment',updateCommentHandller)
 app.get('/getInfo/:id', profileInfoHandler);
-app.post('/addComment',addCommentHandler)
+app.post('/addComment',addCommentHandler);
+app.get('/getFav',getFavHandler);
 
 
 function getHomeHandler(req, res) {
@@ -115,10 +113,10 @@ function getUsersHandler(req, res) {
   });
 }
 
-function updateUserHandller(req, res) {
-  let userId = req.params.id;
-  let { fullName, Email, password } = req.body;
-  let sql = `UPDATE Users SET fullName = $1, Email=$2, password=$3
+
+function updateUserHandller(req,res){
+  let {fullName,Email,password}=req.body;
+  let sql=`UPDATE Users SET fullName = $1, Email=$2, password=$3
   WHERE id=$4 RETURNING *;`
   let values = [fullName, Email, password, userId];
   client.query(sql, values).then(result => {
@@ -164,6 +162,45 @@ function addCommentHandler(req,res)
     });
   
 }
+
+
+function addCommentHandler(req,res)
+{
+  let { user_id, Home_id, comment } = req.body //destructuring
+  console.log(req.body)
+  let sql = `INSERT INTO Comment (user_id,Home_id,comment)
+    VALUES ($1,$2,$3) RETURNING *;`
+  let values = [user_id, Home_id, comment]
+  client.query(sql, values).then((result) => {
+    console.log(result.rows);
+    res.status(201).json(result.rows);
+  })
+    .catch(err => {
+      console.log(err)
+    });
+}
+
+function getFavHandler (req,res){
+  let sql = 'SELECT * FROM Comment';
+  client.query(sql).then(result=>{
+    res.json(result.rows)
+  })
+}
+
+
+
+function updateCommentHandller (req,res) {
+
+    let {user_id,Home_id,comment}=req.body;
+    let sql=`UPDATE Comment SET comment=$1
+    WHERE Home_id=$2 AND user_id=$3 RETURNING *;`
+    let values=[comment,Home_id,user_id];
+    client.query(sql,values).then(result=>{
+        res.send(result.rows)
+    }).catch(err => {console.log(err)})
+
+}
+
 //Constructor
 function HomeData(property_id, webUrl, address, prop_status, price, beds, baths, photo) {
   this.id = property_id;
