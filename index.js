@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const PORT = 3003
+const PORT = 3021
 require('dotenv').config();
 const { Client } = require('pg');
 const client = new Client(process.env.DATABASE_URL)
@@ -8,13 +8,10 @@ const client = new Client(process.env.DATABASE_URL)
 const cors = require('cors');
 app.use(cors());
 const axios = require("axios");
-// const bodyParser = require('body-parser')
-// app.use(bodyParser.urlencoded({ extended: false }))
-// app.use(bodyParser.json())
 app.use(express.json());
 const apikey = process.env.API_KEY;
 const hostKey = process.env.HOST_KEY;
-// const url = process.env.URL;
+const url = process.env.URL;
 let data = require('./home.json');
 const bcrypt = require('bcrypt');
 const saltRounds = 10;
@@ -25,8 +22,10 @@ app.post('/addUser', addUserHandller);
 app.get('/getUsers', getUsersHandler);
 app.put('/updateUser/:id', updateUserHandller)
 app.delete('/deleteUser/:id', deletUserHandller);
-//app.put('/updatecomment/:KEY',updatecommentHandller);
-
+app.put('/updateComment',updateCommentHandller)
+app.get('/getInfo/:id', profileInfoHandler);
+app.post('/addComment',addCommentHandler);
+app.get('/getFav',getFavHandler);
 
 function getHomeHandler(req, res) {
   const city = req.query.city;
@@ -149,6 +148,22 @@ VALUES($1, $2, $3) RETURNING *;`;
     .catch(err => {
       console.error(err);
       res.status(500).json({ error: "An error occurred while checking for existing email." });
+
+//http://localhost:3002/addUser
+function addUserHandller(req, res) {
+  let { fullName, Email, password } = req.body //destructuring
+  console.log(req.body)
+  let sql = `INSERT INTO users (fullName,Email,password)
+      VALUES($1,$2,$3) RETURNING *;`
+  let values = [fullName, Email, password]
+  client.query(sql, values).then((result) => {
+    console.log(result.rows)
+    //res.send("add succfly")
+    res.status(201).json(result.rows);
+
+  })
+    .catch(err => {
+      console.log(err)
     });
 }
 
@@ -160,10 +175,6 @@ function getUsersHandler(req, res) {
     //console.log(result.rows)
     res.json(result.rows);
   }).catch(err => {
-    console.error(err);
-    res.status(500).json({ error: "An error occurred while getting users." });
-  });
-}
 
 function updateUserHandller(req, res) {
   let userId = req.params.id;
@@ -177,6 +188,10 @@ function updateUserHandller(req, res) {
     console.error(err);
     res.status(500).json({ error: "An error occurred while updating the user." });
   });
+    console.log(err)
+  });
+}
+
 }
 
 function deletUserHandller(req, res) {
@@ -187,9 +202,75 @@ function deletUserHandller(req, res) {
     //res.send("delet succfly")
     res.status(204).send("delete")
   }).catch(err => {
-    console.error(err);
-    res.status(500).json({ error: "An error occurred while deleting the user." });
+    console.log(err)
   });
+}
+
+
+function profileInfoHandler(req,res) {
+  let { id } = req.params;
+  let sql = 'SELECT * FROM Users WHERE id=$1;'
+  let values = [id];
+  client.query(sql, values).then(result => {
+    res.status(201).send(result.rows)
+  }).catch(err => {
+    console.log(err)
+  });
+}
+function addCommentHandler(req,res)
+{
+  let { user_id, Home_id, comment } = req.body //destructuring
+  console.log(req.body)
+  let sql = `INSERT INTO Comment (user_id,Home_id,comment)
+    VALUES ($1,$2,$3) RETURNING *;`
+  let values = [user_id, Home_id, comment]
+  client.query(sql, values).then((result) => {
+    console.log(result.rows);
+    res.status(201).json(result.rows);
+
+  })
+    .catch(err => {
+      console.log(err)
+    });
+  
+}
+
+
+function addCommentHandler(req,res)
+{
+  let { user_id, Home_id, comment } = req.body //destructuring
+  console.log(req.body)
+  let sql = `INSERT INTO Comment (user_id,Home_id,comment)
+    VALUES ($1,$2,$3) RETURNING *;`
+  let values = [user_id, Home_id, comment]
+  client.query(sql, values).then((result) => {
+    console.log(result.rows);
+    res.status(201).json(result.rows);
+  })
+    .catch(err => {
+      console.log(err)
+    });
+}
+
+function getFavHandler (req,res){
+  let sql = 'SELECT * FROM Comment';
+  client.query(sql).then(result=>{
+    res.json(result.rows)
+  })
+}
+
+
+
+function updateCommentHandller (req,res) {
+
+    let {user_id,Home_id,comment}=req.body;
+    let sql=`UPDATE Comment SET comment=$1
+    WHERE Home_id=$2 AND user_id=$3 RETURNING *;`
+    let values=[comment,Home_id,user_id];
+    client.query(sql,values).then(result=>{
+        res.send(result.rows)
+    }).catch(err => {console.log(err)})
+
 }
 
 //Constructor
@@ -204,75 +285,8 @@ function HomeData(property_id, webUrl, address, prop_status, price, beds, baths,
   this.photo = photo;
 }
 
-//LOGIN (AUTHENTICATE USER)
-app.post("/loginAuthanication", loginAuthHandler)
-function loginAuthHandler(req, res) {
-  const email = req.query.Email;
-  const password = req.query.Password;
-
-  // Select the user with the matching email
-  let sql = 'SELECT id, email, password FROM Users WHERE email=$1';
-  let values = [email];
-
-  client.query(sql, values)
-    .then(result => {
-      if (result.rows.length > 0) {
-        const user = result.rows[0];
-        const hashedPassword = user.password;
-
-        // Compare the plain-text password with the hashed password
-        bcrypt.compare(password, hashedPassword, (err, isMatch) => {
-          if (err) {
-            console.error(err);
-            res.status(500).json({ error: "An error occurred while comparing the passwords." });
-            return;
-          }
-
-          if (isMatch) {
-            res.send(`Login successful with ${user.id}`);
-          } else {
-            res.status(401).json({ error: "Invalid email or password." });
-          }
-        });
-      } else {
-        res.status(401).json({ error: "Invalid email or password." });
-      }
-    })
-    .catch(err => {
-      console.error(err);
-      res.status(500).json({ error: "An error occurred while authenticating the user." });
-    });
-}
-
-//forgetPassword
-app.post('/reset', resetPasswordHandler);
-
-function resetPasswordHandler(req,res) {
-  // Get the email entered by the user
-  let email=req.body.email
-
-  // Check if the email is valid (you can add more validation if needed)
-  if (!validateEmail(email)) {
-    alert("Please enter a valid email address.");
-    return;
-  }
-
-  // Send a request to reset the password
-  var xhr = new XMLHttpRequest();       //this help send a request to the server
-  xhr.open("POST", "reset-password.php");
-  xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.onload = function () {
-    if (xhr.status === 200) {
-      alert("A password reset link has been sent to your email address.");
-    } else {
-      alert("An error occurred while resetting your password.");
-    }
-  };
-  xhr.send(JSON.stringify({ email: email }));
-}
-
-app.use(error404);
 //handle error 404
+app.use(error404);
 function error404(req, res) {
   return res.status(404).json({ status: 404, responseText: "page not found error" });
 }
