@@ -1,30 +1,26 @@
-
-CREATE TABLE  Users (
+DROP TABLE IF EXISTS Users;
+CREATE TABLE IF NOT EXISTS Users (
   id SERIAL NOT NULL PRIMARY KEY,
     fullName VARCHAR(255),
     Email VARCHAR(255),
     password VARCHAR(255)
 );
-CREATE TABLE Comment (
+DROP TABLE IF EXISTS Comment;
+CREATE TABLE IF NOT EXISTS Comment (
     user_id int,
     Home_id int,
-    PRIMARY KEY (user_id, Home_id),
-    addruss VARCHAR(255),
-    states VARCHAR(255),
-    price VARCHAR(255),
-    beds VARCHAR(255),
-    baths VARCHAR(255),
-    photo VARCHAR(500),
-    comment VARCHAR(255)
+    PRIMARY KEY (user_id, Home_id)
 );
 
-
-CREATE TABLE  News (
+DROP TABLE IF EXISTS News;
+CREATE TABLE IF NOT EXISTS News (
   id SERIAL NOT NULL ,
     PRIMARY KEY (id),
     Email VARCHAR(255)
 );
-
-CREATE TABLE  Crypto (
+DROP TABLE IF EXISTS Crypto;
+CREATE TABLE IF NOT EXISTS Crypto (
+    id SERIAL NOT NULL ,
+    PRIMARY KEY (id),
     code VARCHAR(255)
 );

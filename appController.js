@@ -1,8 +1,7 @@
 const nodemailer = require('nodemailer');
 const Mailgen = require('mailgen');
 const { EMAIL, PASSWORD } = require('./env.js')
-const {Client}=require('pg');
-const client =new Client(process.env.DATABASE_URL)
+
 
 
 //send mail from real gmail account 
@@ -12,10 +11,7 @@ function sendEmailHandeler (req, res) {
     // let email=req.body.email
     const {email}=req.body;
     let code = (Math.random() + 1).toString(36).substring(7).toUpperCase();
-    console.log(code)
-    let values=[code] 
-    let sql=`INSERT INTO Crypto (code) VALUES($1) RETURNING *;`
-    client.query(sql,values).then().catch();
+ 
 
 
     let config = {
@@ -62,7 +58,7 @@ function sendEmailHandeler (req, res) {
   
     transporter.sendMail(message).then(() => {
         return res.status(201).json({
-            msg: "you should receive an email"
+            msg: "you should receive an email",yourCode:code
         })
     }).catch(error => {
         return res.status(500).json({ error })

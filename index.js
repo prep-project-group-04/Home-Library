@@ -30,9 +30,9 @@ app.put('/updateUser/:id',updateUserHandller)
 app.delete('/deleteUser/:id',deletUserHandller);
 //app.put('/updatecomment/:KEY',updatecommentHandller);
 // app.post("/restPass",passwordHandeler)
-app.post("/favourite",favouriteHandeler)
+// app.post("/favourite",favouriteHandeler)
 app.get("/email",emailHandeler)
-app.post('/codeChecker',codeCheckerHandller);
+app.get('/codeChecker',codeCheckerHandller);
 
 
 
@@ -182,66 +182,22 @@ function loginAuthHandler(req,res)
 
 
 
-function favouriteHandeler(req,res){
-  const { user_id,Home_id,address,status,price,beds,baths,photo,comment } = req.body;
-  let values = [address,status,price,beds,baths,photo,comment];
-  if (!user_id || !Home_id) {
-    return res.status(400).alert('Your Not Logged In !!!!');
-  }else{
-    let sql=`INSERT INTO Comment (addruss,states,price,beds,baths,photo,comment)
-    VALUES($1,$2,$3,$4,$5,$6,$7) RETURNING * ;`;
-    client.query(sql,values).then((result)=>{
-        res.json(result.rows);
-  
-    }).catch((err)=>{errorHandler(err)});
-  }
-}
+
 
 function emailHandeler (req,res){
   let sql=`SELECT Email FROM Users;`;
   client.query(sql).then((result)=>{
       res.json(result.rows);
-  }).catch((err)=>{errorHandler(err)});
+  }).catch();
 }
 
 function codeCheckerHandller(req,res){ 
   let sql=`SELECT code FROM Crypto;`;
   client.query(sql).then((result)=>{
       res.json(result.rows);
-  }).catch((err)=>{errorHandler(err)});
+  }).catch();
 }
 
-
-
-
-
-
-//forgetPassword
-app.post('/reset', resetPasswordHandler);
-
-function resetPasswordHandler(req,res) {
-  // Get the email entered by the user
-  let email=req.body.email
-
-  // Check if the email is valid (you can add more validation if needed)
-  if (!validateEmail(email)) {
-    alert("Please enter a valid email address.");
-    return;
-  }
-
-  // Send a request to reset the password
-  var xhr = new XMLHttpRequest();       //this help send a request to the server
-  xhr.open("POST", "reset-password.php");
-  xhr.setRequestHeader("Content-Type", "application/json");
-  xhr.onload = function () {
-    if (xhr.status === 200) {
-      alert("A password reset link has been sent to your email address.");
-    } else {
-      alert("An error occurred while resetting your password.");
-    }
-  };
-  xhr.send(JSON.stringify({ email: email }));
-}
 
 
 app.use(error404);
