@@ -85,6 +85,27 @@ function addUserHandller(req, res) {
 
   console.log(req.body);
 
+  // Add length restrictions
+  const maxNameLength = 25;
+  const maxEmailLength = 50;
+  const maxPasswordLength = 25;
+  const minPasswordLength = 8;
+  
+  if (fullName.length > maxNameLength) {
+    res.status(400).json({ error: "Full name is too long. Maximum length is 25 characters." });
+    return;
+  }
+
+  if (email.length > maxEmailLength) {
+    res.status(400).json({ error: "Email is too long. Maximum length is 50 characters." });
+    return;
+  }
+
+  if (password.length > maxPasswordLength || password.length < minPasswordLength) {
+    res.status(400).json({ error: "Password length must be between 8 and 25 characters." });
+    return;
+  }
+
   // Check if the email is valid
   if (!isValidEmail(email)) {
     res.status(400).json({ error: "Invalid email format." });
