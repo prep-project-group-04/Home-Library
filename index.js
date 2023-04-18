@@ -3,7 +3,7 @@ const app = express()
 const PORT = 3021
 require('dotenv').config();
 const { Client } = require('pg');
-const client = new Client(process.env.DATABASE_URL)
+const client = new Client(process.env.DATABASE_URL);
 
 const cors = require('cors');
 app.use(cors());
@@ -20,12 +20,14 @@ app.get('/', getHomeHandler);
 app.get('/filter', filterHandler);
 app.post('/addUser', addUserHandller);
 app.get('/getUsers', getUsersHandler);
-app.put('/updateUser/:id', updateUserHandller)
+app.put('/updateUser/:id', updateUserHandller);
 app.delete('/deleteUser/:id', deletUserHandller);
 app.put('/updateComment',updateCommentHandller)
 app.get('/getInfo/:id', profileInfoHandler);
 app.post('/addComment',addCommentHandler);
 app.get('/getFav',getFavHandler);
+app.post("/loginAuthanication", loginAuthHandler);
+app.use(error404);
 
 function getHomeHandler(req, res) {
   const city = req.query.city;
@@ -62,8 +64,7 @@ function filterHandler(req, res) {
     price = price.split('-');
     firstPrice = parseInt(price[0].replace(/[^\d]+/g, '')) * 1000;
     secondPrice = parseInt(price[1].replace(/[^\d]+/g, '')) * 1000;
-
-    let array = data.filter(element => {
+  let array = data.filter(element => {
       return element.address === city && element.price >= firstPrice && element.price <= secondPrice;
     });
 
@@ -74,6 +75,25 @@ function filterHandler(req, res) {
 }
 
 
+
+//LOGIN (AUTHENTICATE USER)
+function loginAuthHandler(req, res) {
+  const email = req.body.email;
+  const password = req.body.password;
+  let values = [email];
+  let sql = `SELECT * FROM Users WHERE Email=$1`;
+  client.query(sql, values).then((result) => {
+    if (result.rows[0].password == password) {
+      res.status(201).json(result.rows[0].id)
+    }
+    else {
+      res.status(505).json('rong password');
+    }
+  }).catch((err) => {
+    res.status(505).json('No account');
+  })
+}
+
 function isValidEmail(email) {
   const regex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
   return regex.test(email);
@@ -83,7 +103,6 @@ function addUserHandller(req, res) {
   let { fullName, email, password } = req.body; // Destructuring
 
   console.log(req.body);
-
   // Add length restrictions
   const maxNameLength = 25;
   const maxEmailLength = 50;
@@ -286,7 +305,6 @@ function HomeData(property_id, webUrl, address, prop_status, price, beds, baths,
 }
 
 //handle error 404
-app.use(error404);
 function error404(req, res) {
   return res.status(404).json({ status: 404, responseText: "page not found error" });
 }
