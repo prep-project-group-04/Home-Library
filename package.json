@@ -4,7 +4,10 @@
   "description": "- Aseel Bdoor - Eman Obeidat - Maysa Albataineh - Al Mothana Al-Masri - Qais dwairi - Mo'ath Shakatreh",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+     "start": "node index.js",
+    "dev": "nodemon index.js",
+    "build": "webpack --mode production",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
