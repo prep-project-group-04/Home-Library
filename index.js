@@ -160,9 +160,6 @@ function isValidEmail(email) {
 
 function addUserHandller(req, res) {
   let { fullName, email, password } = req.body; // Destructuring
-
-  console.log(req.body);
-
   // Add length restrictions
   const maxNameLength = 25;
   const maxEmailLength = 50;
@@ -204,7 +201,6 @@ function addUserHandller(req, res) {
       // Hash the password using bcrypt
       bcrypt.hash(password, saltRounds, (err, hash) => {
         if (err) {
-          console.error(err);
           res.status(500).json({ error: "An error occurred while hashing the password." });
           return;
         }
@@ -218,13 +214,11 @@ VALUES($1, $2, $3) RETURNING *;`;
             res.status(201).json(result.rows);
           })
           .catch(err => {
-            console.error(err);
             res.status(500).json({ error: "An error occurred while adding the user." });
           });
       });
     })
     .catch(err => {
-      console.error(err);
       res.status(500).json({ error: "An error occurred while checking for existing email." });
     });
 }
@@ -357,9 +351,18 @@ function addCommentHandler(req, res) {
 }
 
 function getFavHandler(req, res) {
-  let sql = 'SELECT * FROM Comment';
-  client.query(sql).then(result => {
-    res.json(result.rows)
+  let {userID}=req.body;
+  let sql = 'SELECT * FROM Comment WHERE user_id=$1';
+  let values=[userID];
+  client.query(sql,values).then(result => {
+    if(result.rows.length>0){
+      res.status(201).json(result.rows)
+    }
+    else{
+      res.status(505).json("There is no comment yet")
+    }
+  }).catch((err)=>{
+    res.status(500).json(err);
   })
 }
 
