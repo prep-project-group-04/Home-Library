@@ -14,8 +14,13 @@ const hostKey = process.env.HOST_KEY;
 const url = process.env.URL;
 let data = require('./home.json');
 const bcrypt = require('bcrypt');
+//router
+//imports the router module from ./router.js file
+const appRoute = require('./router.js')
+//middleware function that will handle any incoming requests to the '/api' endpoint.
+app.use('/api', appRoute);
+//
 const saltRounds = 10;
-
 app.get('/', getHomeHandler);
 app.get('/filter', filterHandler);
 app.post('/addUser', addUserHandller);
@@ -27,11 +32,13 @@ app.get('/getInfo/:id', profileInfoHandler);
 app.post('/addComment',addCommentHandler);
 app.get('/getFav',getFavHandler);
 app.post("/loginAuthanication", loginAuthHandler);
+app.get("/email",emailHandeler)
+app.get('/codeChecker',codeCheckerHandller);
 app.use(error404);
+
 
 function getHomeHandler(req, res) {
   const city = req.query.city;
-
   const options = {
     method: 'GET',
     url: `${url}`,
@@ -168,6 +175,21 @@ VALUES($1, $2, $3) RETURNING *;`;
       console.error(err);
       res.status(500).json({ error: "An error occurred while checking for existing email." });
 
+
+function emailHandeler (req,res){
+  let sql=`SELECT Email FROM Users;`;
+  client.query(sql).then((result)=>{
+      res.json(result.rows);
+  }).catch();
+}
+
+function codeCheckerHandller(req,res){ 
+  let sql=`SELECT code FROM Crypto;`;
+  client.query(sql).then((result)=>{
+      res.json(result.rows);
+  }).catch();
+}
+
 //http://localhost:3002/addUser
 function addUserHandller(req, res) {
   let { fullName, Email, password } = req.body //destructuring
@@ -236,8 +258,9 @@ function profileInfoHandler(req,res) {
     console.log(err)
   });
 }
-function addCommentHandler(req,res)
-{
+
+
+function addCommentHandler(req,res){
   let { user_id, Home_id, comment } = req.body //destructuring
   console.log(req.body)
   let sql = `INSERT INTO Comment (user_id,Home_id,comment)
