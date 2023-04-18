@@ -30,7 +30,6 @@ app.get('/getInfo', profileInfoHandler);
 app.post('/addComment', addCommentHandler);
 app.get('/getFav', getFavHandler);
 app.post("/loginAuthanication", loginAuthHandler);
-app.get("/email", emailHandeler);
 app.post('/restPassword',restPassword);
 app.put("/updatePass",updatePassword);
 app.delete("/deleteComment",deleteComment);
@@ -140,10 +139,10 @@ function restPassword(req,res){
       res.send('false')
     }
     else{
-      axios.post('/api/sendEmail', {
+      axios.post('http://localhost:3021/api/sendEmail', {
         email: `${email}`
       }).then(function (response) {
-        res.status(201).send('done');
+        res.status(201).send(response.data.yourCode);
       }).catch(function (error) {
         res.status(505).send(error);
       });
@@ -260,14 +259,6 @@ function loginAuthHandler(req, res) {
   } else {
     res.status(500).json('Try Other Way Haker');
   }
-}
-
-
-function emailHandeler(req, res) {
-  let sql = `SELECT Email FROM Users;`;
-  client.query(sql).then((result) => {
-    res.json(result.rows);
-  }).catch();
 }
 
 function updatePassword(req, res) {
