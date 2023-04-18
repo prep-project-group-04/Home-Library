@@ -7,9 +7,7 @@
     "start": "node index.js",
     "dev": "nodemon index.js",
     "build": "webpack --mode production",
-    "test": "jest",
-    "preinstall": "npx npm-force-resolutions",
-    "postinstall": "npm run build"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
