@@ -4,10 +4,12 @@
   "description": "- Aseel Bdoor - Eman Obeidat - Maysa Albataineh - Al Mothana Al-Masri - Qais dwairi - Mo'ath Shakatreh",
   "main": "index.js",
   "scripts": {
-     "start": "node index.js",
+    "start": "node index.js",
     "dev": "nodemon index.js",
     "build": "webpack --mode production",
-    "test": "jest"
+    "test": "jest",
+    "preinstall": "npx npm-force-resolutions",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
