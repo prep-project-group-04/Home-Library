@@ -1,2 +1,0 @@
-buildCommand: npm ci && npm run build
-deployCommand: npm start
