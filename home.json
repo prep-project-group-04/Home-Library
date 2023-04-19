@@ -1,0 +1,2001 @@
+[
+    {
+      "id": "M4157573636",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/99-John-St-Apt-1203_New-York_NY_10038_M41575-73636",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 655000,
+      "beds": 0,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/72b631292dbe443c151ebb2c3747855al-m3244054716x.jpg"
+    },
+    {
+      "id": "M4307847585",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/50-Lexington-Ave-Apt-2F_New-York_NY_10010_M43078-47585",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 675000,
+      "beds": 0,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/1b8cb9d6e492a303297bdc89228312ffl-m1127504061x.jpg"
+    },
+    {
+      "id": "M3447480759",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/216-E-47th-St-Apt-7A_New-York_NY_10017_M34474-80759",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 1275000,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/a965116c90ae79c28fde7029ea82d71bl-m3618685711x.jpg"
+    },
+    {
+      "id": "M3330227338",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/240-E-55th-St-Apt-8F_New-York_NY_10022_M33302-27338",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 390000,
+      "beds": 0,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/caee3118c5da7b30748bae84ac32ce19l-m1152256968x.jpg"
+    },
+    {
+      "id": "M9516113121",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/345-E-93rd-St-Apt-2J_New-York_NY_10128_M95161-13121",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 565000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/9f554ee0885b6b1db1922a199944736el-m375461860x.jpg"
+    },
+    {
+      "id": "M4921502496",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/333-E-91st-St-Apt-7B_New-York_NY_10128_M49215-02496",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 1250000,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/d927dd719d24822ffa40dd729fe6884el-m162844382x.jpg"
+    },
+    {
+      "id": "M9357038789",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/150-W-End-Ave-Apt-19L_New-York_NY_10023_M93570-38789",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 1850000,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/f3b32f89974443006742b6115169d89fl-m3395750449x.jpg"
+    },
+    {
+      "id": "M4823397779",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/141-Grymes-Hill-Rd_Staten-Island_NY_10301_M48233-97779",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 1099000,
+      "beds": 4,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/f81036b710892392096dbb367d9f65fbl-m525551607x.jpg"
+    },
+    {
+      "id": "M3777697699",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/330-E-94th-St-Apt-3A_New-York_NY_10128_M37776-97699",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 669000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/17dd143e449738eb883214adaeec0e29l-m2346971383x.jpg"
+    },
+    {
+      "id": "M4920682341",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/4824-43rd-St-Apt-4K_Woodside_NY_11377_M49206-82341",
+      "address": "Woodside",
+      "status": "for_sale",
+      "price": 259000,
+      "beds": 0,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/9ca84c32aa3aa29025c74b41cfea029el-m2653278121x.jpg"
+    },
+    {
+      "id": "M3926372700",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/109-Saint-Johns-Ave_Staten-Island_NY_10305_M39263-72700",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 649900,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/ac5a9eed867e4adbc546709d0703b48al-b1419841820x.jpg"
+    },
+    {
+      "id": "M4165269862",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/195-Warwick-Ave_Staten-Island_NY_10314_M41652-69862",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 1599000,
+      "beds": 4,
+      "baths": 5,
+      "photo": "https://ap.rdcpix.com/b46a65a7cf937fa710a46041515af253l-m2068572357x.jpg"
+    },
+    {
+      "id": "M3289221718",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/181-E-65th-St-Apt-12A_New-York_NY_10065_M32892-21718",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 3075000,
+      "beds": 2,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/35ecff9e729ffb22e776aa26f1d43918l-m3814283369x.jpg"
+    },
+    {
+      "id": "M3131950635",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/380-Malcolm-X-Blvd-Ph-D_New-York_NY_10027_M31319-50635",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 2950000,
+      "beds": 3,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/86c7d1e7cc1e84bb18ede99388fe6482l-m3142392405x.jpg"
+    },
+    {
+      "id": "M3500886859",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/10520-66th-Rd-Apt-4C_Forest-Hills_NY_11375_M35008-86859",
+      "address": "Forest Hills",
+      "status": "for_sale",
+      "price": 200000,
+      "beds": 0,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/86b3288605983dfea9c0a3d22578b3c8l-m1624214893x.jpg"
+    },
+    {
+      "id": "M3621661593",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/7944-Calamus-Ave_Elmhurst_NY_11373_M36216-61593",
+      "address": "Elmhurst",
+      "status": "for_sale",
+      "price": 999000,
+      "beds": 3,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/9bea37c66d213ab4753db3cad62f4a68l-m2484983424x.jpg"
+    },
+    {
+      "id": "M3683621557",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/9445-Alstyne-Ave_Elmhurst_NY_11373_M36836-21557",
+      "address": "Flushing",
+      "status": "for_sale",
+      "price": 1285000,
+      "beds": 7,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/34240642a4ae3f91d297d4d1cc184882l-m1154436393x.jpg"
+    },
+    {
+      "id": "M4624991455",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/3514-155th-St_Flushing_NY_11354_M46249-91455",
+      "address": "Flushing",
+      "status": "for_sale",
+      "price": 1750000,
+      "beds": 8,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/39eae9c497ca0892aa13a5b02d148741l-m881929606x.jpg"
+    },
+    {
+      "id": "M9300469006",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/20106-35th-Ave-1A_Bayside_NY_11361_M93004-69006",
+      "address": "Bayside",
+      "status": "for_sale",
+      "price": 349000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/67234a1b3ddc6012c6110f0914fe0c14l-m1396938997x.jpg"
+    },
+    {
+      "id": "M4979775823",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/12510-115th-Ave_South-Ozone-Park_NY_11420_M49797-75823",
+      "address": "South Ozone Park",
+      "status": "for_sale",
+      "price": 650000,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/2be67ec109d4db6b2ed1ffa3a7ffbc23l-m573640221x.jpg"
+    },
+    {
+      "id": "M4370228878",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/10046-Francis-Lewis-Blvd_Queens-Village_NY_11429_M43702-28878",
+      "address": "Queens Village",
+      "status": "for_sale",
+      "price": 695000,
+      "beds": 3,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/4473d748d1c107d8b3c5ebd6c4f98c66l-m161561732x.jpg"
+    },
+    {
+      "id": "M4389188405",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/3441-85th-St-Apt-3T_Jackson-Heights_NY_11372_M43891-88405",
+      "address": "Jackson Heights",
+      "status": "for_sale",
+      "price": 375000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/63718989f3a55886a7449394ff4a20e6l-m1024973916x.jpg"
+    },
+    {
+      "id": "M4295403023",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/3226-Union-St-Apt-5C_Flushing_NY_11354_M42954-03023",
+      "address": "Flushing",
+      "status": "for_sale",
+      "price": 669000,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/1ce2f9423e879d0d64027a2c1b02022bl-m2874643611x.jpg"
+    },
+    {
+      "id": "M9944900998",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/3245-Perry-Ave-Apt-5G_Bronx_NY_10467_M99449-00998",
+      "address": "Bronx",
+      "status": "for_sale",
+      "price": 250000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/61fdb0026dbe24b7568fdf8698a2e6c8l-m197418584x.jpg"
+    },
+    {
+      "id": "M4265515521",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/474-48th-Ave-Apt-30L_Long-Island-City_NY_11109_M42655-15521",
+      "address": "Long Island City",
+      "status": "for_sale",
+      "price": 850000,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/457b0e056038928f7b996ffa1651d867l-m406693874x.jpg"
+    },
+    {
+      "id": "M3173947856",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/3557-163rd-St_Flushing_NY_11358_M31739-47856",
+      "address": "Flushing",
+      "status": "for_sale",
+      "price": 1900000,
+      "beds": 6,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/4fc04e471d26905956d0327d51bdcffbl-m2466413263x.jpg"
+    },
+    {
+      "id": "M9124666305",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/26910-Grand-Central-Pkwy-Apt-12K_Floral-Park_NY_11005_M91246-66305",
+      "address": "Floral Park",
+      "status": "for_sale",
+      "price": 479000,
+      "beds": 2,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/aa2f53cc4550d904a56d2e6b4e9fd716l-m3519720214x.jpg"
+    },
+    {
+      "id": "M9309594267",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/1335-33-37-Taylor-Ave_Bronx_NY_10472_M93095-94267",
+      "address": "Bronx",
+      "status": "for_sale",
+      "price": 2500000,
+      "beds": 0,
+      "photo": ""
+    },
+    {
+      "id": "M4470544729",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/687-E-42nd-St_Brooklyn_NY_11203_M44705-44729",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 850000,
+      "beds": 4,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/bccf4709ed4286375bba3ea01a396e37l-m2598458484x.jpg"
+    },
+    {
+      "id": "M3334308647",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/800-Grand-Concourse-Apt-5JN_Bronx_NY_10451_M33343-08647",
+      "address": "Bronx",
+      "status": "for_sale",
+      "price": 369000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/c4edfd3a16f8dd7c5612c8c0bd991aacl-m687726380x.jpg"
+    },
+    {
+      "id": "M4668288366",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/332-W-20th-St_New-York_NY_10011_M46682-88366",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 9950000,
+      "beds": 5,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/27974eb398aca4b6dfc91cc630f86229l-m1721601246x.jpg"
+    },
+    {
+      "id": "M9001393730",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/4530-Pearson-St-3B_Long-Island-City_NY_11101_M90013-93730",
+      "address": "Queens",
+      "status": "for_sale",
+      "price": 920000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/b046ac2f6f9ad37470fd2e97f71ee401l-m122029915x.jpg"
+    },
+    {
+      "id": "M3062138504",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/859-53rd-St_Brooklyn_NY_11220_M30621-38504",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 3380000,
+      "beds": null,
+      "baths": 8,
+      "photo": "https://ap.rdcpix.com/c600b0477ad1a484a560e9716c3f28ffl-m1812730159x.jpg"
+    },
+    {
+      "id": "M4287089232",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/404-3rd-St-Apt-A1_Brooklyn_NY_11215_M42870-89232",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 1850000,
+      "beds": 3,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/ea67e88fd14c16bcec31104369a28778l-m594225263x.jpg"
+    },
+    {
+      "id": "M9054993956",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/631-E-18th-St-Apt-3C_Brooklyn_NY_11226_M90549-93956",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 799000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/4643793011d2d6d77eafde88ac18a5a1l-m1787934951x.jpg"
+    },
+    {
+      "id": "M3399268014",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/1815-215th-St-Apt-5A_Bayside_NY_11360_M33992-68014",
+      "address": "Bayside",
+      "status": "for_sale",
+      "price": 379000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/bb219651795227c1ee3110628c5a61d0l-m1916374854x.jpg"
+    },
+    {
+      "id": "M4167483898",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/333-E-79th-St-Apt-9R_New-York_NY_10075_M41674-83898",
+      "address": "Manhattan",
+      "status": "for_sale",
+      "price": 675000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/ad598364726b3729bfbbba8e331d6be0l-m471434136x.jpg"
+    },
+    {
+      "id": "M3957507709",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/4015-Atlantic-Ave_Brooklyn_NY_11224_M39575-07709",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 1998000,
+      "beds": 12,
+      "baths": 7,
+      "photo": "https://ap.rdcpix.com/47311fedb6a8bafc443d05bf39d05752l-m3051614118x.jpg"
+    },
+    {
+      "id": "M4701231123",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/340-19th-St_Brooklyn_NY_11215_M47012-31123",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 1900000,
+      "beds": 6,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/e7d6e2b462f76a3cd41d8ee1efafef46l-m3148772174x.jpg"
+    },
+    {
+      "id": "M9321396014",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/280-W-12th-St-Apt-2W_New-York_NY_10014_M93213-96014",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 535000,
+      "beds": 0,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/53720b0f67ded580e497fbbaf432a5c8l-m3905296444x.jpg"
+    },
+    {
+      "id": "M4159537142",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/2160-Bronx-Park-E-Apt-2C_Bronx_NY_10462_M41595-37142",
+      "address": "Bronx",
+      "status": "for_sale",
+      "price": 310000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/695cc78d07fcf07d64b61ac5f616864dl-m2576604590x.jpg"
+    },
+    {
+      "id": "M3839830972",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/1804-Pitman-Ave_Bronx_NY_10466_M38398-30972",
+      "address": "Bronx",
+      "status": "for_sale",
+      "price": 615000,
+      "beds": 3,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/520fc3b29e561a43452cb29f647eac1dl-m4114672743x.jpg"
+    },
+    {
+      "id": "M4926431965",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/66-Madison-Ave-Apt-8F_New-York_NY_10016_M49264-31965",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 675000,
+      "beds": 1,
+      "baths": 1,
+      "photo": ""
+    },
+    {
+      "id": "M3795957555",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/9417-68th-Ave_Forest-Hills_NY_11375_M37959-57555",
+      "address": "Forest Hills",
+      "status": "for_sale",
+      "price": 1100000,
+      "beds": 3,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/0bf63892a9a2562e01f83f233df14b53l-m1672191427x.jpg"
+    },
+    {
+      "id": "M3244087097",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/415-Argyle-Rd-Apt-2F_Brooklyn_NY_11218_M32440-87097",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 529000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/d26d33d9cdb5243bb95010597d0b1f20l-m1548374012x.jpg"
+    },
+    {
+      "id": "M3958541462",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/111-Barrow-St-Apt-6D_New-York_NY_10014_M39585-41462",
+      "address": "Manhattan",
+      "status": "for_sale",
+      "price": 2300000,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/f690a64b5171d03c7b4d74410d443a97l-m4169026731x.jpg"
+    },
+    {
+      "id": "M3732819754",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/66-N-1st-St-Apt-1A_Brooklyn_NY_11249_M37328-19754",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 1350000,
+      "beds": 1,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/df70d94e2e8d2f7813bf4c0d855309d5l-m3738110014x.jpg"
+    },
+    {
+      "id": "M3625066612",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/163-McVeigh-Ave_Staten-Island_NY_10314_M36250-66612",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 699000,
+      "beds": 3,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/cdd46faf30fe04f56df863f955e699fel-m2281503071x.jpg"
+    },
+    {
+      "id": "M3088598209",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/2385-Barker-Ave-Apt-2A_Bronx_NY_10467_M30885-98209",
+      "address": "Bronx",
+      "status": "for_sale",
+      "price": 335000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/7b320833a2a2e0811549564def884316l-m2417622814x.jpg"
+    },
+    {
+      "id": "M4226270542",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/15120-25th-Dr_Flushing_NY_11354_M42262-70542",
+      "address": "Flushing",
+      "status": "for_sale",
+      "price": 1139000,
+      "beds": 3,
+      "baths": 3,
+      "photo": ""
+    },
+    {
+      "id": "M4916152557",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/4-Bartlett-Pl_Brooklyn_NY_11229_M49161-52557",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 248000,
+      "beds": null,
+      "baths": 0,
+      "photo": "https://ap.rdcpix.com/7f9d28be1ddf0e184cfb14cf7902fccal-m2924138742x.jpg"
+    },
+    {
+      "id": "M3204123913",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/184-Kent-Ave-Apt-C107_Brooklyn_NY_11249_M32041-23913",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 1185000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/d3d3e1001f17f8d1ae54527337ead48bl-m2091486924x.jpg"
+    },
+    {
+      "id": "M3100521202",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/204-Sheffield-Ave_Brooklyn_NY_11207_M31005-21202",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 644999,
+      "beds": null,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/ef85b35f1bfbc6d691b73ba7a56fdc0cl-m2549838372x.jpg"
+    },
+    {
+      "id": "M4259820407",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/1253-Blake-Ave_Brooklyn_NY_11208_M42598-20407",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 1200000,
+      "beds": 7,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/a944775ce20a58bdbca462353876bd8al-b364179540x.jpg"
+    },
+    {
+      "id": "M9979008491",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/31-E-72nd-St-Apt-3B_New-York_NY_10021_M99790-08491",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 4900000,
+      "beds": 3,
+      "baths": 3,
+      "photo": ""
+    },
+    {
+      "id": "M4058642004",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/27-Meserole-St-Apt-3R_Brooklyn_NY_11206_M40586-42004",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 635000,
+      "beds": 1,
+      "baths": 1,
+      "photo": ""
+    },
+    {
+      "id": "M3801681958",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/10325-68th-Ave-Apt-5A_Forest-Hills_NY_11375_M38016-81958",
+      "address": "Forest Hills",
+      "status": "for_sale",
+      "price": 295000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/1124dcdef55b27939d3e5c9838d84846l-m4028287966x.jpg"
+    },
+    {
+      "id": "M4481370408",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/920-Metcalf-Ave-Apt-7K_Bronx_NY_10473_M44813-70408",
+      "address": "Bronx",
+      "status": "for_sale",
+      "price": 85000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/ab850c94a74d91329684b77aa4f34bb9l-m803001664x.jpg"
+    },
+    {
+      "id": "M9175679592",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/61-63-69th_Middle-Village_NY_11379_M91756-79592",
+      "address": "Flushing",
+      "status": "for_sale",
+      "price": 1500000,
+      "beds": 4,
+      "baths": 2,
+      "photo": ""
+    },
+    {
+      "id": "M9726781645",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/8409-155th-Ave-Apt-1J_Howard-Beach_NY_11414_M97267-81645",
+      "address": "Howard Beach",
+      "status": "for_sale",
+      "price": 130000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/21e4a4952a4fc36faeaccafab78ff31dl-m2886646772x.jpg"
+    },
+    {
+      "id": "M3587289096",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/17401-Jewel-Ave_Fresh-Meadows_NY_11365_M35872-89096",
+      "address": "Fresh Meadows",
+      "status": "for_sale",
+      "price": 1149000,
+      "beds": 4,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/732c480b96f15378fad8ca08875c165al-m287988773x.jpg"
+    },
+    {
+      "id": "M9204748290",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/212-W-72nd-St-9J_New-York_NY_10023_M92047-48290",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 4800000,
+      "beds": 3,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/ccfce6e8d009f2779068eadf720524aal-m3385428224x.jpg"
+    },
+    {
+      "id": "M3962745606",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/199-State-St-Apt-10A_Brooklyn_NY_11201_M39627-45606",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 1100000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/b7c00096fc8d904b816b8c5087d8593bl-m470654868x.jpg"
+    },
+    {
+      "id": "M9712702867",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/320-E-72nd-St-Apt-2C_New-York_NY_10021_M97127-02867",
+      "address": "Manhattan",
+      "status": "for_sale",
+      "price": 2473000,
+      "beds": 4,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/5954cc9539d2ad73b953a07f71204c58l-m1327710607x.jpg"
+    },
+    {
+      "id": "M3467729986",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/55-E-93rd-St-Apt-4D_New-York_NY_10128_M34677-29986",
+      "address": "Manhattan",
+      "status": "for_sale",
+      "price": 750000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/20284b3a7442bcbd31c3d64017c1d014l-m1886187059x.jpg"
+    },
+    {
+      "id": "M4816925030",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/10-W-66th-St-Apt-5J_New-York_NY_10023_M48169-25030",
+      "address": "Manhattan",
+      "status": "for_sale",
+      "price": 950000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/c9beba34b627561caa1622edbe1f5370l-m30915723x.jpg"
+    },
+    {
+      "id": "M3500162728",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/57-W-58th-St-Apt-7E_New-York_NY_10019_M35001-62728",
+      "address": "Manhattan",
+      "status": "for_sale",
+      "price": 959000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/2b836ec0b7a5752139670796c35f2764l-m998897167x.jpg"
+    },
+    {
+      "id": "M4017058225",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/363-E-76th-St-Apt-8G_New-York_NY_10021_M40170-58225",
+      "address": "Manhattan",
+      "status": "for_sale",
+      "price": 520000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/fc9ce4e49f6f6a354e5f2d330f148986l-m3259696377x.jpg"
+    },
+    {
+      "id": "M4139097951",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/3324-91st-St-Apt-5R_Jackson-Heights_NY_11372_M41390-97951",
+      "address": "Jackson Heights",
+      "status": "for_sale",
+      "price": 237000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/ff7b18a17b30695a29b64cddb68dbeedl-m869301770x.jpg"
+    },
+    {
+      "id": "M9758010623",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/60-Riverside-Dr-6CD_New-York_NY_10024_M97580-10623",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 3495000,
+      "beds": 3,
+      "baths": 3,
+      "photo": ""
+    },
+    {
+      "id": "M3347943427",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/101-W-79th-St-Apt-2D_New-York_NY_10024_M33479-43427",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 2495000,
+      "beds": 2,
+      "baths": 2,
+      "photo": ""
+    },
+    {
+      "id": "M4151999791",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/252-E-57th-St-Apt-49A_New-York_NY_10022_M41519-99791",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 5750000,
+      "beds": 3,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/16f54ee95f53a5a247262cc7c02a2edfl-m755317575x.jpg"
+    },
+    {
+      "id": "M9820713114",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/323-E-53rd-St-Apt-4_New-York_NY_10022_M98207-13114",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 925000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/e836b1bb09b05d9dc8e24bdeb4d27489l-m2737824488x.jpg"
+    },
+    {
+      "id": "M3491630019",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/140-E-40th-St-Apt-6J_New-York_NY_10016_M34916-30019",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 368000,
+      "beds": 0,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/a10329122f7ca8428cff29a348c804a5l-m1160792621x.jpg"
+    },
+    {
+      "id": "M4387145139",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/22055-46th-Ave-Apt-15T_Bayside_NY_11361_M43871-45139",
+      "address": "Bayside",
+      "status": "for_sale",
+      "price": 372000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/7641a89530f2abfdb6fb8423fe740a4bl-m1856154487x.jpg"
+    },
+    {
+      "id": "M4710274335",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/1748-Anthony-Ave_Bronx_NY_10457_M47102-74335",
+      "address": "Bronx",
+      "status": "for_sale",
+      "price": 1150000,
+      "beds": 7,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/ffc16bdbeeb7ed37e3e49c6523f434dcl-m2020296887x.jpg"
+    },
+    {
+      "id": "M4071680712",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/230-Riverside-Dr-Apt-8A_New-York_NY_10025_M40716-80712",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 1895000,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/7497da28684fae72901f77d3dbd75c04l-m3083391821x.jpg"
+    },
+    {
+      "id": "M3172474369",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/1235-120th-St_College-Point_NY_11356_M31724-74369",
+      "address": "College Point",
+      "status": "for_sale",
+      "price": 1299000,
+      "beds": 6,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/3d0801c74cf828ad5482f01c44e82fb4l-m1463247991x.jpg"
+    },
+    {
+      "id": "M9532923439",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/213-Bayside-Ave_Breezy-Point_NY_11697_M95329-23439",
+      "address": "Queens",
+      "status": "for_sale",
+      "price": 849000,
+      "beds": 3,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/8b848a41ff868f47920575365e83252bl-m3430556959x.jpg"
+    },
+    {
+      "id": "M4421861804",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/6624-75th-St_Middle-Village_NY_11379_M44218-61804",
+      "address": "Middle Village",
+      "status": "for_sale",
+      "price": 1028000,
+      "beds": 6,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/65f070011626a2b5ac3d53b5525c9250l-m724834664x.jpg"
+    },
+    {
+      "id": "M4637500368",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/704-166th-St-Apt-9C_Whitestone_NY_11357_M46375-00368",
+      "address": "Beechhurst",
+      "status": "for_sale",
+      "price": 450000,
+      "beds": 3,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/629ed5847efba4ba335be1a61c5e658dl-m1900092199x.jpg"
+    },
+    {
+      "id": "M3409759740",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/41-Herkimer-St_Staten-Island_NY_10301_M34097-59740",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 1398000,
+      "beds": 4,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/9f50228b18d132c703246e669aa7f7b3l-m2217547732x.jpg"
+    },
+    {
+      "id": "M9854941967",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/532-Clinton-St-Unit-Townhouse_Brooklyn_NY_11231_M98549-41967",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 2950000,
+      "beds": 5,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/3296ee85800cb844b14aec4d3ad4ab7dl-m725960202x.jpg"
+    },
+    {
+      "id": "M9919529973",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/240-Riverside-Blvd-Apt-8E_New-York_NY_10069_M99195-29973",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 2895000,
+      "beds": 2,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/60a5b86ad7ee2e7af33bdd226b150852l-m3941778338x.jpg"
+    },
+    {
+      "id": "M3658631915",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/40-E-10th-St-Apt-2G_New-York_NY_10003_M36586-31915",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 1995000,
+      "beds": 1,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/ff5e1dc8090d27f910671ff8c33fa2del-m1204160708x.jpg"
+    },
+    {
+      "id": "M3175317339",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/350-Hooper-St-Apt-3_Brooklyn_NY_11211_M31753-17339",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 1100000,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/8016edc95a1e7160b0153fc56c9b6982l-m1041948485x.jpg"
+    },
+    {
+      "id": "M9062708979",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/27-Wyckoff-St-Unit-Combo_Brooklyn_NY_11201_M90627-08979",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 4250000,
+      "beds": 5,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/9e5f3f96943663e39d534f4d0525f6ael-m1429654044x.jpg"
+    },
+    {
+      "id": "M9126441319",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/71-Stagg-St-Unit-Townhouse_Brooklyn_NY_11206_M91264-41319",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 1499000,
+      "beds": 4,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/773f786b6ac167bc65368f5cbcde0de8l-m4004088656x.jpg"
+    },
+    {
+      "id": "M9160664190",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/45-E-7th-St_New-York_NY_10003_M91606-64190",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 6750000,
+      "beds": 3,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/28e7b1d2b30c45bcd84bff46a71db1d1l-m619301478x.jpg"
+    },
+    {
+      "id": "M4945279084",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/509-W-122nd-St-20_New-York_NY_10027_M49452-79084",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 799000,
+      "beds": 3,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/d656a33ed94292a8585feae05550dcd8l-m1812560700x.jpg"
+    },
+    {
+      "id": "M4969034458",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/215-W-91st-St-Apt-111_New-York_NY_10024_M49690-34458",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 1495000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/c66f3e335a1e952b173a3f16250d7862l-m902065075x.jpg"
+    },
+    {
+      "id": "M3775490358",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/153-E-57th-St-Apt-6B_New-York_NY_10022_M37754-90358",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 495000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/eacfd9c034955e1f3005b4b8aedbb9ffl-m3165454316x.jpg"
+    },
+    {
+      "id": "M3465899369",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/509-48th-Ave-Apt-5E_Long-Island-City_NY_11101_M34658-99369",
+      "address": "Queens",
+      "status": "for_sale",
+      "price": 935000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/bad5230a05e6108fea078990b2fb79bdl-m3387121111x.jpg"
+    },
+    {
+      "id": "M3743562800",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/130-Bay-Ridge-Pkwy-Apt-1M_Brooklyn_NY_11209_M37435-62800",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 179000,
+      "beds": 0,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/2aaccd77150ab5aeb58763cf54d133c4l-m2168755481x.jpg"
+    },
+    {
+      "id": "M9520783715",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/612-E-54th-St-Unit-Townhouse_Brooklyn_NY_11203_M95207-83715",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 1299000,
+      "beds": 7,
+      "baths": 6,
+      "photo": "https://ap.rdcpix.com/3b3d4b1c1dbfa5d0d0fc4d8079e31bf5l-m2798851486x.jpg"
+    },
+    {
+      "id": "M9532972970",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/2-Columbus-Ave-Apt-35B_New-York_NY_10023_M95329-72970",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 2850000,
+      "beds": 2,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/6bf7b238f10bfdb7db79f4e256dbf1a0l-m2961595925x.jpg"
+    },
+    {
+      "id": "M9511274825",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/500C-Grand-St-B3B_New-York_NY_10002_M95112-74825",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 595000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/bc6b7136415ac45d356f650aa2038749l-m3705528023x.jpg"
+    },
+    {
+      "id": "M9359346499",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/27-Wyckoff-St-A_Brooklyn_NY_11201_M93593-46499",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 2399000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/68eabe0da590df49228656b2f47d1ccbl-m2042877439x.jpg"
+    },
+    {
+      "id": "M9350464636",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/3434-Giles-Pl-Unit-Townhouse_Bronx_NY_10463_M93504-64636",
+      "address": "Bronx",
+      "status": "for_sale",
+      "price": 849000,
+      "beds": 3,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/6372c15f39724a8513b6372555dd26bel-m2578001468x.jpg"
+    },
+    {
+      "id": "M4862650341",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/40-W-67th-St-Apt-9D_New-York_NY_10023_M48626-50341",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 1495000,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/53f8274dbccd77c7f82f121a5674a0dbl-m3153747706x.jpg"
+    },
+    {
+      "id": "M4404524367",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/368-W-117th-St-Apt-4B_New-York_NY_10026_M44045-24367",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 1349000,
+      "beds": 3,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/9d32eb606ffe7ee9c816a956d89dbde8l-m3402251561x.jpg"
+    },
+    {
+      "id": "M4939003184",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/340-E-23rd-St-Apt-10E_New-York_NY_10010_M49390-03184",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 1695000,
+      "beds": 2,
+      "baths": 2,
+      "photo": ""
+    },
+    {
+      "id": "M3078357718",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/300-Central-Park-W-Apt-15C2_New-York_NY_10024_M30783-57718",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 1250000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/6a804e0fa3febefa1929f2cd8141a7bcl-m1205056250x.jpg"
+    },
+    {
+      "id": "M3011826636",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/431-W-54th-St-Apt-2C_New-York_NY_10019_M30118-26636",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 530000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/f7bd6d6cd3454b6d68bd497c91f4a275l-m2656858925x.jpg"
+    },
+    {
+      "id": "M3776690512",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/212-E-57th-St-Apt-5A_New-York_NY_10022_M37766-90512",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 2250000,
+      "beds": 2,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/6f89d285e43e93fc2e5337962040f9ael-m1169533642x.jpg"
+    },
+    {
+      "id": "M3687208687",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/20-Sutton-Pl-S-Apt-12A_New-York_NY_10022_M36872-08687",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 1450000,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/5762e3376d9021591cbfc3b3e85e69ael-m1706302941x.jpg"
+    },
+    {
+      "id": "M4090883646",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/344-W-72nd-St-Apt-302_New-York_NY_10023_M40908-83646",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 5500000,
+      "beds": 4,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/702d39bd7a7c59472cc20c9d7e797c0bl-m1425089263x.jpg"
+    },
+    {
+      "id": "M9422876991",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/2247-Harman-St-Unit-Townhouse_Ridgewood_NY_11385_M94228-76991",
+      "address": "Queens",
+      "status": "for_sale",
+      "price": 1879000,
+      "beds": 8,
+      "baths": 6,
+      "photo": "https://ap.rdcpix.com/a369fbfe09d28ab756207ff0f47a7043l-m3944416203x.jpg"
+    },
+    {
+      "id": "M4621430308",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/101-W-12th-St-Apt-2S_New-York_NY_10011_M46214-30308",
+      "address": "Manhattan",
+      "status": "for_sale",
+      "price": 775000,
+      "beds": 0,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/5d6ed4c84000ec1b123fb4261b773cd8l-m767484694x.jpg"
+    },
+    {
+      "id": "M3536754001",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/176-Johnson-St-Apt-6A_Brooklyn_NY_11201_M35367-54001",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 1195000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/711d0e772a2ba9fd66c84ad55650029dl-m1785236194x.jpg"
+    },
+    {
+      "id": "M9108551191",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/236-E-47th-St-27DE_New-York_NY_10017_M91085-51191",
+      "address": "Manhattan",
+      "status": "for_sale",
+      "price": 1670000,
+      "beds": 2,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/d6e480328e0211c82e8de71b90336459l-m4162213608x.jpg"
+    },
+    {
+      "id": "M3979681066",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/135-Prospect-Park-SW-Apt-E1_Brooklyn_NY_11218_M39796-81066",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 1795000,
+      "beds": 3,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/5c54a0c18c7ffb38d0234df4cba1ca3fl-m1926166868x.jpg"
+    },
+    {
+      "id": "M4504578347",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/54-E-8th-St-Apt-6A_New-York_NY_10003_M45045-78347",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 695000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/ab6f9fe52331f6724891eda4facb5a68l-m1506156258x.jpg"
+    },
+    {
+      "id": "M9592200164",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/36-Schermerhorn-St_Brooklyn_NY_11201_M95922-00164",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 7350000,
+      "beds": 5,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/4b507abe70f14b2a7e562965888c9ed3l-m553572230x.jpg"
+    },
+    {
+      "id": "M3256038703",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/649-Saint-Marks-Ave_Brooklyn_NY_11216_M32560-38703",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 1999999,
+      "beds": 7,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/9611b7e0c8a1ac853c709a7583d2791bl-m2366500856x.jpg"
+    },
+    {
+      "id": "M3919325525",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/2994-Zulette-Ave_Bronx_NY_10461_M39193-25525",
+      "address": "Bronx",
+      "status": "for_sale",
+      "price": 685000,
+      "beds": 3,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/ee54f952036d7f992ecb4f9cc0b26f0dl-m790353794x.jpg"
+    },
+    {
+      "id": "M4133530652",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/9-E-Raleigh-Ave_Staten-Island_NY_10310_M41335-30652",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 605000,
+      "beds": 3,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/364465701ff93d48cd45d52c4b840f48l-m1090742000x.jpg"
+    },
+    {
+      "id": "M4155283200",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/7305-217th-St_Oakland-Gardens_NY_11364_M41552-83200",
+      "address": "Oakland Gardens",
+      "status": "for_sale",
+      "price": 295000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/73fe83ce4a0bc441c9a23c3d983a5c8fl-m483057998x.jpg"
+    },
+    {
+      "id": "M3976807368",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/200-E-62nd-St-Apt-14C_New-York_NY_10065_M39768-07368",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 1975000,
+      "beds": 1,
+      "baths": 2,
+      "photo": ""
+    },
+    {
+      "id": "M9214076115",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/117-W-96th-St-Apt-5_New-York_NY_10025_M92140-76115",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 829000,
+      "beds": 2,
+      "baths": 1,
+      "photo": ""
+    },
+    {
+      "id": "M3649689403",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/50-Plaza-St-E-Apt-12C_Brooklyn_NY_11238_M36496-89403",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 2275000,
+      "beds": 3,
+      "baths": 3,
+      "photo": ""
+    },
+    {
+      "id": "M9478019982",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/393-W-End-Ave-Apt-6A_New-York_NY_10024_M94780-19982",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 3850000,
+      "beds": 3,
+      "baths": 2,
+      "photo": ""
+    },
+    {
+      "id": "M3247610395",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/456-W-167th-St-Apt-7A_New-York_NY_10032_M32476-10395",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 928000,
+      "beds": 2,
+      "baths": 2,
+      "photo": ""
+    },
+    {
+      "id": "M4765055913",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/168-Sterling-Pl-Apt-4R_Brooklyn_NY_11217_M47650-55913",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 1865000,
+      "beds": 3,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/13b268a530eeb7de4412cce6e23efefcl-m2481514562x.jpg"
+    },
+    {
+      "id": "M9027461150",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/174-Arlo-Rd-A_Staten-Island_NY_10301_M90274-61150",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 162900,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/f7d1f19158437a64b81423a2a48a5a40l-m753009591x.jpg"
+    },
+    {
+      "id": "M3534877467",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/1598-Unionport-Rd-Apt-4D_Bronx_NY_10462_M35348-77467",
+      "address": "Bronx",
+      "status": "for_sale",
+      "price": 170000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/aacf9f1bc3f6196b3608cdd0e2bfaba3l-m2497265700x.jpg"
+    },
+    {
+      "id": "M3172790839",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/2621-Palisade-Ave-Apt-7H_Bronx_NY_10463_M31727-90839",
+      "address": "Bronx",
+      "status": "for_sale",
+      "price": 499500,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/0251dd9fb0f253f75c6b3a480598938fl-m982518879x.jpg"
+    },
+    {
+      "id": "M9663274867",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/2915-W-5th-St-Apt-4G_Brooklyn_NY_11224_M96632-74867",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 389000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/f4a86e8345fe52e48366cef4aac7d2c0l-m3904001772x.jpg"
+    },
+    {
+      "id": "M4460309556",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/1655-Flatbush-Ave-Apt-B1508_Brooklyn_NY_11210_M44603-09556",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 295000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/d6ee1d9a5ed71ad0cf0454de0b87d9e1l-m3950911249x.jpg"
+    },
+    {
+      "id": "M3231338293",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/159-W-53rd-St-Apt-24F_New-York_NY_10019_M32313-38293",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 885000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/0e365e42ab2c8310c6515753d290513fl-m732372284x.jpg"
+    },
+    {
+      "id": "M4636742822",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/782-Ionia-Ave_Staten-Island_NY_10312_M46367-42822",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 1600000,
+      "beds": 4,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/a0c1945f82cd871ba34d8f393904ef39l-m3641099914x.jpg"
+    },
+    {
+      "id": "M4603418846",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/48-Perry-Ave_Staten-Island_NY_10314_M46034-18846",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 925000,
+      "beds": 4,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/b826f0856d25486890761311ce634c50l-m471296973x.jpg"
+    },
+    {
+      "id": "M4189129665",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/454-15th-St-Apt-1L_Brooklyn_NY_11215_M41891-29665",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 1099999,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/dff88ef4f732159cdad5451c8ca7ea6al-m4278480930x.jpg"
+    },
+    {
+      "id": "M9121684870",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/320-Dewey-Ave_Staten-Island_NY_10308_M91216-84870",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 1699999,
+      "beds": 5,
+      "baths": 5,
+      "photo": "https://ap.rdcpix.com/3c909cadde5e96bcf15f9027d18d953el-m3291983699x.jpg"
+    },
+    {
+      "id": "M9919693210",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/576-Carroll-St_Brooklyn_NY_11215_M99196-93210",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 4595000,
+      "beds": 5,
+      "baths": 5,
+      "photo": "https://ap.rdcpix.com/3f95d9929dcf20953311b06f865386b7l-m200157459x.jpg"
+    },
+    {
+      "id": "M3697305310",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/560-Carroll-St-Apt-4B_Brooklyn_NY_11215_M36973-05310",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 1500000,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/b8eca5478ffceff8e00c6bb239b5a62fl-m2796857730x.jpg"
+    },
+    {
+      "id": "M4127367003",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/171-W-131st-St-Apt-314_New-York_NY_10027_M41273-67003",
+      "address": "Manhattan",
+      "status": "for_sale",
+      "price": 635000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/7e9ef4e47cf8b6eaeba851e69c06b59el-m3867256223x.jpg"
+    },
+    {
+      "id": "M9205328323",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/145-W-86th-St-Apt-1C_New-York_NY_10024_M92053-28323",
+      "address": "Manhattan",
+      "status": "for_sale",
+      "price": 750000,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/fb40078f6018c5eac5635ecb781ea360l-m27674595x.jpg"
+    },
+    {
+      "id": "M9818692814",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/202-W-78th-St-Apt-2E_New-York_NY_10024_M98186-92814",
+      "address": "Manhattan",
+      "status": "for_sale",
+      "price": 995000,
+      "beds": 3,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/d6069c9fb67d2d33e3ba29fe4e9489b5l-m3287846096x.jpg"
+    },
+    {
+      "id": "M4337687576",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/300-E-54th-St-Apt-9J_New-York_NY_10022_M43376-87576",
+      "address": "Manhattan",
+      "status": "for_sale",
+      "price": 948000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/1174e8a43e0974db8c6f26faf2176e6el-m2698053781x.jpg"
+    },
+    {
+      "id": "M3919495561",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/452-W-144th-St_New-York_NY_10031_M39194-95561",
+      "address": "Manhattan",
+      "status": "for_sale",
+      "price": 3000000,
+      "beds": 9,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/996c19aa6284cfef4361355fe06065ebl-m3527019188x.jpg"
+    },
+    {
+      "id": "M9249198024",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/17169-46th-Ave_Flushing_NY_11358_M92491-98024",
+      "address": "Flushing",
+      "status": "for_sale",
+      "price": 1590000,
+      "beds": 2,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/523b9ce477c53d1717da4f289846a1cal-m1450690840x.jpg"
+    },
+    {
+      "id": "M9980932696",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/780-Ionia-Ave_Staten-Island_NY_10312_M99809-32696",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 1600000,
+      "beds": 4,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/5601f50d3f78a7c77b7b1c703b5a7c55l-m3641099914x.jpg"
+    },
+    {
+      "id": "M3710396693",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/31-Marscher-Pl_Staten-Island_NY_10309_M37103-96693",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 469000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/f2fb652d585385d7f59166524b97696fl-m2314678649x.jpg"
+    },
+    {
+      "id": "M4730612583",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/24355-144th-Ave_Rosedale_NY_11422_M47306-12583",
+      "address": "Rosedale",
+      "status": "for_sale",
+      "price": 599900,
+      "beds": 3,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/0687e4da393ddb0c8990c29af45158fel-m4211523648x.jpg"
+    },
+    {
+      "id": "M9116763429",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/875-W-End-Ave-Apt-11B_New-York_NY_10025_M91167-63429",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 2050000,
+      "beds": 3,
+      "baths": 3,
+      "photo": ""
+    },
+    {
+      "id": "M4107653320",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/443-Greenwich-St-Apt-4F_New-York_NY_10013_M41076-53320",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 11000000,
+      "beds": 3,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/974da2a7fc7f3f0bf65c1d11a45306edl-m1704521475x.jpg"
+    },
+    {
+      "id": "M4407048699",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/201-Bergen-St_Brooklyn_NY_11217_M44070-48699",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 3495000,
+      "beds": 4,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/2efc9861f9f8096fbf8ab73663c8ae9cl-m688968397x.jpg"
+    },
+    {
+      "id": "M9442774742",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/120-E-36th-St-Apt-6H_New-York_NY_10016_M94427-74742",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 825000,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/87c1279fe52397838970c3ce083a1f55l-m1222773158x.jpg"
+    },
+    {
+      "id": "M3668433713",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/21-Monroe-Pl-Apt-4F_Brooklyn_NY_11201_M36684-33713",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 750000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/03e6c8b34226a2b5fac271eade5de806l-m191736321x.jpg"
+    },
+    {
+      "id": "M9824259890",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/2928-W-5th-St-Apt-9G_Brooklyn_NY_11224_M98242-59890",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 339000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/001a367901b9897804ab02cdaf4e6dbbl-m331417951x.jpg"
+    },
+    {
+      "id": "M4439131862",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/23-Marble-Hill-Ave_Bronx_NY_10463_M44391-31862",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 895000,
+      "beds": 6,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/f85c2a54c4b933cf0a73c75acccbf378l-m920501886x.jpg"
+    },
+    {
+      "id": "M3323028074",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/12517-11th-Ave_College-Point_NY_11356_M33230-28074",
+      "address": "College Point",
+      "status": "for_sale",
+      "price": 748000,
+      "beds": 3,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/a06ad2aeaf074c95bb1514a0d8329216l-m1821932022x.jpg"
+    },
+    {
+      "id": "M4600003218",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/753-Saint-Nicholas-Ave-Apt-5B_New-York_NY_10031_M46000-03218",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 599475,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/fdbd376bb370320c88e658d208f72747l-m1837830907x.jpg"
+    },
+    {
+      "id": "M3577267521",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/61-W-9th-St-Apt-5C_New-York_NY_10011_M35772-67521",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 1925000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/811a75f6caeb0af470c6616b8e68493fl-m308495776x.jpg"
+    },
+    {
+      "id": "M3814780677",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/102-Saint-Marks-Pl-Apt-1_Brooklyn_NY_11217_M38147-80677",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 2195000,
+      "beds": 3,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/ebd1035d164ca8c5ed28afd1ae38eaa0l-m1394703973x.jpg"
+    },
+    {
+      "id": "M4920943507",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/201-E-17th-St-Apt-30A_New-York_NY_10003_M49209-43507",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 899000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/22f69287360fcbdb563e27b60df3803el-m3851555036x.jpg"
+    },
+    {
+      "id": "M9458678479",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/130-E-67th-St-6G_New-York_NY_10065_M94586-78479",
+      "address": "Manhattan",
+      "status": "for_sale",
+      "price": 895000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/904abbc5eaea0689886be2ed0308510bl-m2233480086x.jpg"
+    },
+    {
+      "id": "M3833899666",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/3845-Shore-Pkwy-Apt-6A_Brooklyn_NY_11235_M38338-99666",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 288000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/db23b7e86039c899673987ec3124d5fel-m3546506202x.jpg"
+    },
+    {
+      "id": "M3446965672",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/11-Knox-St_Staten-Island_NY_10309_M34469-65672",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 999000,
+      "beds": 6,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/020754bd997e8e5397bf0f42bd7b0292l-m3972434314x.jpg"
+    },
+    {
+      "id": "M3829842966",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/232-Kelly-Blvd_Staten-Island_NY_10314_M38298-42966",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 999999,
+      "beds": 5,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/b1f5dca5da944b10433f215b17535697l-m158035352x.jpg"
+    },
+    {
+      "id": "M4454281247",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/5839-201st-St_Oakland-Gardens_NY_11364_M44542-81247",
+      "address": "Oakland Gardens",
+      "status": "for_sale",
+      "price": 1066000,
+      "beds": 4,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/e5749e694f953b7a56b9abbc3555af48l-m3806283094x.jpg"
+    },
+    {
+      "id": "M3258545488",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/2983-Avenue-S_Brooklyn_NY_11229_M32585-45488",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 899000,
+      "beds": 3,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/f52435a0218e1c02eadd356cc3826aeal-m2400780209x.jpg"
+    },
+    {
+      "id": "M4030822565",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/27-Sabrina-Ln_Staten-Island_NY_10304_M40308-22565",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 1350000,
+      "beds": 4,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/14ea40da6edf10b221c025298e7b602fl-m4054931050x.jpg"
+    },
+    {
+      "id": "M9701009792",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/24-Bedell-Ave_Staten-Island_NY_10307_M97010-09792",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 1400000,
+      "beds": 4,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/01bb575c6b191d025916d9229d473459l-m3944464031x.jpg"
+    },
+    {
+      "id": "M9909826665",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/1845-82nd-St-Apt-C8_Brooklyn_NY_11214_M99098-26665",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 338000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/154ff02f05a0fddb54fec00d8d58c3acl-m62088782x.jpg"
+    },
+    {
+      "id": "M3069279899",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/22432-76th-Rd_Oakland-Gardens_NY_11364_M30692-79899",
+      "address": "Oakland Gardens",
+      "status": "for_sale",
+      "price": 949000,
+      "beds": 3,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/58ce94a54e53215231e87d7c226aef54l-m1222934236x.jpg"
+    },
+    {
+      "id": "M9664007957",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/609-Columbus-Ave-Apt-14A_New-York_NY_10024_M96640-07957",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 691158,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/55860d98a16174191b1bc4760799141bl-b1004956767x.jpg"
+    },
+    {
+      "id": "M3592971861",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/3875-Waldo-Ave-Apt-2E_Bronx_NY_10463_M35929-71861",
+      "address": "Bronx",
+      "status": "for_sale",
+      "price": 325000,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/ddc7953b5ab5e282800d35960dc30a94l-m303042569x.jpg"
+    },
+    {
+      "id": "M4756183164",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/1478-E-93rd-St_Brooklyn_NY_11236_M47561-83164",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 550000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/ef37f7919aadb0b0e756d2fa4e5d38b7l-m1247590955x.jpg"
+    },
+    {
+      "id": "M9042501615",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/2942-W-5th-St-Apt-3P_Brooklyn_NY_11224_M90425-01615",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 429000,
+      "beds": 3,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/eac3f32fbacb17721888349154395221l-m193049759x.jpg"
+    },
+    {
+      "id": "M9668051606",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/2928-W-5th-St-Apt-6C_Brooklyn_NY_11224_M96680-51606",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 499900,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/824d90f342fce4b263f87658275a6110l-m3964021619x.jpg"
+    },
+    {
+      "id": "M3850003841",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/38-Bowdoin-St_Staten-Island_NY_10314_M38500-03841",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 1050000,
+      "beds": 5,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/8fe334a9cb4abef4b035d9276d0226fcl-m114354649x.jpg"
+    },
+    {
+      "id": "M3445553905",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/6928-138th-St-A_Flushing_NY_11367_M34455-53905",
+      "address": "Kew Gardens Hills",
+      "status": "for_sale",
+      "price": 369000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/1096d39fc1bb0d0c5234e521a23c5725l-m570490559x.jpg"
+    },
+    {
+      "id": "M4640944427",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/15167-19th-Ave_Whitestone_NY_11357_M46409-44427",
+      "address": "Whitestone",
+      "status": "for_sale",
+      "price": 1780000,
+      "beds": 6,
+      "baths": 5,
+      "photo": "https://ap.rdcpix.com/a7a735958e5648ae9e31cc56080dc321l-m2681820036x.jpg"
+    },
+    {
+      "id": "M3519243776",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/82-Irving-Pl-Apt-6C_Brooklyn_NY_11238_M35192-43776",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 950000,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/eb94fd7c45b89918349f69fb06fe567bl-m1205763045x.jpg"
+    },
+    {
+      "id": "M4260582812",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/119-Campbell-Ave_Staten-Island_NY_10310_M42605-82812",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 475000,
+      "beds": 3,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/2e22e8c2f7598ec5a497d4b424d02278l-m3122437275x.jpg"
+    },
+    {
+      "id": "M3071185354",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/254-Cortelyou-Ave_Staten-Island_NY_10312_M30711-85354",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 628888,
+      "beds": 3,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/ee91878156dc4850faee81b7c31f04dbl-m2700852109x.jpg"
+    },
+    {
+      "id": "M4347391336",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/21-S-End-Ave-Apt-637_New-York_NY_10280_M43473-91336",
+      "address": "Manhattan",
+      "status": "for_sale",
+      "price": 1250000,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/941cb16f9b4be371585698e91bc96283l-m3099744149x.jpg"
+    },
+    {
+      "id": "M3741302388",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/325-E-57th-St-Apt-1B_New-York_NY_10022_M37413-02388",
+      "address": "Manhattan",
+      "status": "for_sale",
+      "price": 750000,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/53567f6b39d0f4719efa40633ab527d3l-m2271966075x.jpg"
+    },
+    {
+      "id": "M3464286079",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/101-Leonard-St-Apt-4F_New-York_NY_10013_M34642-86079",
+      "address": "Manhattan",
+      "status": "for_sale",
+      "price": 1950000,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/175a24ce3b06c2dafb3d727f0b4d4934l-m688781104x.jpg"
+    },
+    {
+      "id": "M3792050073",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/1167-E-55th-St_Brooklyn_NY_11234_M37920-50073",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 1199000,
+      "beds": 5,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/ea6b3e88084cb0ee98e725fd7b5dcf83l-m1923154811x.jpg"
+    },
+    {
+      "id": "M4066515266",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/294-12th-St-1_Brooklyn_NY_11215_M40665-15266",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 2150000,
+      "beds": 4,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/a1199e9f0fe85a8ee408a2a6ca8b4607l-m948440666x.jpg"
+    },
+    {
+      "id": "M4820706008",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/11525-84th-Ave-Apt-2M_Richmond-Hill_NY_11418_M48207-06008",
+      "address": "Kew Gardens",
+      "status": "for_sale",
+      "price": 360000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/2b993c02428c1a0c5aca6c43194bdc6bl-m3314058520x.jpg"
+    },
+    {
+      "id": "M3677563869",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/873-42nd-St-Apt-2B_Brooklyn_NY_11232_M36775-63869",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 588000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/35493fdb5013783a3440a26e00a2cfb4l-m3898505407x.jpg"
+    },
+    {
+      "id": "M3807874462",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/315-E-77th-St-Apt-4J_New-York_NY_10075_M38078-74462",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 565000,
+      "beds": 1,
+      "baths": 1,
+      "photo": ""
+    },
+    {
+      "id": "M3964732532",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/150-W-End-Ave-3KL_New-York_NY_10023_M39647-32532",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 2650000,
+      "beds": 3,
+      "baths": 3,
+      "photo": ""
+    },
+    {
+      "id": "M4094454757",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/264-Berry-St_Brooklyn_NY_11249_M40944-54757",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 2999000,
+      "beds": 6,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/205cd6cad5de14319bbba31119f9f31dl-m1475926667x.jpg"
+    },
+    {
+      "id": "M4864388573",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/2414-41st-St_Long-Island-City_NY_11103_M48643-88573",
+      "address": "Astoria",
+      "status": "for_sale",
+      "price": 1998000,
+      "beds": 19,
+      "baths": 8,
+      "photo": "https://ap.rdcpix.com/c19c66c7bd988e773bc5f24bc9fa6676l-m3826955100x.jpg"
+    },
+    {
+      "id": "M4967296104",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/50-Goller-Pl_Staten-Island_NY_10314_M49672-96104",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 835000,
+      "beds": 4,
+      "baths": 4,
+      "photo": "https://ap.rdcpix.com/287ddfb3cbedb62056ccd40f4ede5b30l-m2205792292x.jpg"
+    },
+    {
+      "id": "M3786561982",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/165-Stroud-Ave_Staten-Island_NY_10312_M37865-61982",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 949900,
+      "beds": 3,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/2c5369eaedd6e2b317abe1818e4aa94fl-m3411815036x.jpg"
+    },
+    {
+      "id": "M9033213400",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/332-W-101st-St-Apt-2R_New-York_NY_10025_M90332-13400",
+      "address": "New York",
+      "status": "for_sale",
+      "price": 699000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/e7b52b5aa2ae21ca2d07e9c70504d0e2l-m829433701x.jpg"
+    },
+    {
+      "id": "M3526806471",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/20661-46th-Ave_Bayside_NY_11361_M35268-06471",
+      "address": "Bayside",
+      "status": "for_sale",
+      "price": 715000,
+      "beds": 2,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/cf3bbf27dd87e18ca8800e96cd735aael-m2627446816x.jpg"
+    },
+    {
+      "id": "M3203359612",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/13840-63rd-Ave_Flushing_NY_11367_M32033-59612",
+      "address": "Flushing",
+      "status": "for_sale",
+      "price": 848888,
+      "beds": 3,
+      "baths": 3,
+      "photo": "https://ap.rdcpix.com/aae2b63cdc252d06b7a41fb7d08bcff7l-m902402886x.jpg"
+    },
+    {
+      "id": "M3264601493",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/10740-Queens-Blvd-Apt-8D_Forest-Hills_NY_11375_M32646-01493",
+      "address": "Forest Hills",
+      "status": "for_sale",
+      "price": 329999,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/4478544a53ee78381fa4571ec1510ffbl-m1009728596x.jpg"
+    },
+    {
+      "id": "M3454491956",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/43-Belair-Rd_Staten-Island_NY_10305_M34544-91956",
+      "address": "Staten Island",
+      "status": "for_sale",
+      "price": 850000,
+      "beds": 6,
+      "baths": 2,
+      "photo": "https://ap.rdcpix.com/f4a295130ba58ef0bd0e0efc4e2c5760l-m169896039x.jpg"
+    },
+    {
+      "id": "M9183463867",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/136-Bay-10th-St_Brooklyn_NY_11228_M91834-63867",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 2300000,
+      "beds": 9,
+      "baths": 6,
+      "photo": "https://ap.rdcpix.com/9471d58bd1de3f34898133f4c11d2b97l-m1727467831x.jpg"
+    },
+    {
+      "id": "M4583569946",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/20-E-35th-St-Apt-7L_New-York_NY_10016_M45835-69946",
+      "address": "Manhattan",
+      "status": "for_sale",
+      "price": 725000,
+      "beds": 1,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/9fd41a21866eda7802ac6edb6a385505l-m4123182435x.jpg"
+    },
+    {
+      "id": "M3438851693",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/316-Eckford-St_Brooklyn_NY_11222_M34388-51693",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 4995000,
+      "beds": 4,
+      "baths": 7,
+      "photo": "https://ap.rdcpix.com/c0b41bbeafe49c3964387823dc239df0l-m4243907052x.jpg"
+    },
+    {
+      "id": "M3704683967",
+      "webUrl": "https://www.realtor.com/realestateandhomes-detail/943-Saint-Marks-Ave-Apt-4C_Brooklyn_NY_11213_M37046-83967",
+      "address": "Brooklyn",
+      "status": "for_sale",
+      "price": 550000,
+      "beds": 2,
+      "baths": 1,
+      "photo": "https://ap.rdcpix.com/015ba51a6d28516ac54286bf434fc044l-m3830344881x.jpg"
+    }
+  ]
