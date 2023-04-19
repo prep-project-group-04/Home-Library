@@ -248,10 +248,10 @@ function loginAuthHandler(req, res) {
         });
       })
       .catch((err) => {
-        res.status(505).json('No account');
+        res.status(501).json('No account');
       });
   } else {
-    res.status(500).json('Try Other Way Haker');
+    res.status(502).json('Try Other Way Haker');
   }
 }
 
