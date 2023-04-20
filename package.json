@@ -1,7 +1,7 @@
 {
   "name": "home-library",
   "version": "1.0.0",
-  "description": "",
+  "description": "- Aseel Bdoor - Eman Obeidat - Maysa Albataineh - Al Mothana Al-Masri - Qais dwairi - Mo'ath Shakatreh",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -28,6 +28,7 @@
     "express-validator": "^7.0.1",
     "mailgen": "^2.0.27",
     "nodemailer": "^6.9.1",
+    "nodemon": "^2.0.22",
     "pg": "^8.10.0"
   }
 }
