@@ -1,10 +1,10 @@
-const express = require('express')
-const app = express()
-const PORT = process.env.PORT || 3021;
+// Imports
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3022;
 require('dotenv').config();
 const { Client } = require('pg');
 const client = new Client(process.env.DATABASE_URL);
-
 const cors = require('cors');
 app.use(cors());
 const axios = require("axios");
@@ -13,12 +13,11 @@ const apikey = process.env.API_KEY;
 const hostKey = process.env.HOST_KEY;
 const url = process.env.URL;
 const bcrypt = require('bcrypt');
-//router
-//imports the router module from ./router.js file
-const appRoute = require('./router.js');
-//middleware function that will handle any incoming requests to the '/api' endpoint.
-app.use('/api', appRoute);
 const saltRounds = 10;
+
+// Router
+const appRoute = require('./router.js');
+app.use('/api', appRoute);
 app.get('/', getHomeHandler);
 app.get('/filter', filterHandler);
 app.post('/addUser', addUserHandller);
@@ -26,16 +25,17 @@ app.get('/getUsers', getUsersHandler);
 app.put('/updateUser', updateUserHandller);
 app.delete('/deleteUser', deletUserHandller);
 app.put('/updateComment', updateCommentHandller)
-app.get('/getInfo', profileInfoHandler);
+app.post('/getInfo', profileInfoHandler);
 app.post('/addComment', addCommentHandler);
-app.get('/getFav', getFavHandler);
+app.post('/getFav', getFavHandler);
 app.post("/loginAuthanication", loginAuthHandler);
-app.post('/restPassword',restPassword);
-app.put("/updatePass",updatePassword);
-app.delete("/deleteComment",deleteComment);
-app.use('*',error404);
+app.post('/restPassword', restPassword);
+app.put("/updatePass", updatePassword);
+app.delete("/deleteComment", deleteComment);
+app.use('*', error404);
 
-function getHomeHandler(req, res) {
+// Function definitions
+async function getHomeHandler(req, res) {
   const options = {
     method: 'GET',
     url: `${url}`,
@@ -51,16 +51,18 @@ function getHomeHandler(req, res) {
       'X-RapidAPI-Host': `${hostKey}`
     }
   };
-  axios.request(options).then(function (response) {
-    let result = response.data.properties.map((element) => {
-      return new HomeData(element.property_id, element.rdc_web_url, element.address.city, element.prop_status, element.price, element.beds, element.baths, element.thumbnail)
+
+  try {
+    const response = await axios.request(options);
+    const result = response.data.properties.map((element) => {
+      return new HomeData(element.property_id, element.rdc_web_url, element.address.city, element.prop_status, element.price, element.beds, element.baths, element.thumbnail);
     });
-    data = result;
     res.json(result);
-  }).catch(function (error) {
+  } catch (error) {
     errorHandler(error, req, res);
-  });
+  }
 }
+
 function parsePrice(priceStr) {
   let multiplier = 1;
   let lastChar = priceStr[priceStr.length - 1];
@@ -74,7 +76,6 @@ function parsePrice(priceStr) {
   }
   return parseFloat(priceStr) * multiplier;
 }
-
 
 function filterHandler(req, res) {
   const options = {
@@ -107,7 +108,7 @@ function filterHandler(req, res) {
         }
       }
       else if (city == "noChoice") {
-        let price2='949k-1.7m';
+        let price2 = `${price}`;
         price = price2.split('-');
         firstPrice = parsePrice(price[0]);
         secondPrice = parsePrice(price[1]);
@@ -122,36 +123,35 @@ function filterHandler(req, res) {
       }
     }
     res.json(array);
-
   }).catch(function (error) {
-    // errorHandler(error, req, res);
-    console.log(error)
-  });
+    console.log(error);
+    res.status(500).json({ error: "An error occurred while filtering the data." });
+});
+
 }
 
-
-function restPassword(req,res){
-  let {email}=req.body;
-  let values=[email];
-  let url=`SELECT * FROM Users WHERE Email=$1`;
-  client.query(url,values).then((result)=>{
-    if(result.rows.length==0){
+function restPassword(req, res) {
+  let { email } = req.body;
+  let values = [email];
+  let url = `SELECT * FROM Users WHERE Email=$1`;
+  client.query(url, values).then((result) => {
+    if (result.rows.length == 0) {
       res.send('false')
     }
-    else{
-      axios.post('http://localhost:3021/api/sendEmail', {
+    else {
+      axios.post('https://home-library.up.railway.app/api/sendEmail', {
         email: `${email}`
       }).then(function (response) {
-        res.status(201).send(response.data.yourCode);
+        res.status(201).send(response.data);
       }).catch(function (error) {
         res.status(505).send(error);
       });
     }
-  }).catch((err)=>{
-    res.send(err)
-  })
+  }).catch((err) => {
+    console.log(err);
+    res.status(500).json({ error: "An error occurred while resetting the password." });
+})
 }
-
 
 function isValidEmail(email) {
   const regex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
@@ -160,30 +160,31 @@ function isValidEmail(email) {
 
 function addUserHandller(req, res) {
   let { fullName, email, password } = req.body; // Destructuring
+
   // Add length restrictions
   const maxNameLength = 25;
   const maxEmailLength = 50;
   const maxPasswordLength = 25;
   const minPasswordLength = 8;
-  
+
   if (fullName.length > maxNameLength) {
     res.status(400).json({ error: "Full name is too long. Maximum length is 25 characters." });
     return;
   }
 
   if (email.length > maxEmailLength) {
-    res.status(400).json({ error: "Email is too long. Maximum length is 50 characters." });
+    res.status(401).json({ error: "Email is too long. Maximum length is 50 characters." });
     return;
   }
 
   if (password.length > maxPasswordLength || password.length < minPasswordLength) {
-    res.status(400).json({ error: "Password length must be between 8 and 25 characters." });
+    res.status(402).json({ error: "Password length must be between 8 and 25 characters." });
     return;
   }
 
   // Check if the email is valid
   if (!isValidEmail(email)) {
-    res.status(400).json({ error: "Invalid email format." });
+    res.status(403).json({ error: "Invalid email format." });
     return;
   }
 
@@ -222,7 +223,6 @@ VALUES($1, $2, $3) RETURNING *;`;
       res.status(500).json({ error: "An error occurred while checking for existing email." });
     });
 }
-
 
 //LOGIN (AUTHENTICATE USER)
 function loginAuthHandler(req, res) {
@@ -275,21 +275,18 @@ function updatePassword(req, res) {
   });
 }
 
-  
-//http://localhost:3002/getUsers
 function getUsersHandler(req, res) {
   let sql = `SELECT * FROM Users;`;
   client.query(sql).then((result) => {
-    //  res.send("get succfly")
-    //console.log(result.rows)
     res.json(result.rows);
   }).catch(err => {
-    errorHandler(err, req.res)
-  });
+    console.error(err);
+    res.status(500).json({ error: "An error occurred while getting users." });
+});
 }
 
 function updateUserHandller(req, res) {
-  let { userId,fullName, email, password } = req.body;
+  let { userId, fullName, email, password } = req.body;
   let sql = `UPDATE Users SET fullName = $1, email=$2, password=$3
   WHERE id=$4 RETURNING *;`
   let values = [fullName, email, password, userId];
@@ -301,24 +298,27 @@ function updateUserHandller(req, res) {
   });
 }
 
-function deletUserHandller(req, res) {
-  let { id } = req.body;
-  let sql = `DELETE FROM Users WHERE id=$1;`
-  let values = [id];
-  client.query(sql, values).then(result => {
-    res.status(204).send("delete")
-  }).catch(err => {
-    console.log(err)
-  });
+async function deletUserHandller(req, res) {
+  const { id } = req.body;
+  const sql = `DELETE FROM Users WHERE id=$1;`;
+  const values = [id];
+
+  try {
+    await client.query(sql, values);
+    res.status(204).send("delete");
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ error: "An error occurred while deleting the user." });
+  }
 }
 
-function deleteComment(req,res){
-  let {Home_id,user_id}=req.body;
-  let sql=`DELETE FROM Comment WHERE Home_id=$1 AND user_id=$2`;
-  let values=[Home_id,user_id];
-  client.query(sql,values).then((result)=>{
+function deleteComment(req, res) {
+  let { Home_id, user_id } = req.body;
+  let sql = `DELETE FROM Comment WHERE Home_id=$1 AND user_id=$2`;
+  let values = [Home_id, user_id];
+  client.query(sql, values).then((result) => {
     res.status(201).send("Data deleted");
-  }).catch((err)=>{
+  }).catch((err) => {
     console.log(err)
     res.status(500).json("comment dosent exist");
   })
@@ -331,8 +331,9 @@ function profileInfoHandler(req, res) {
   client.query(sql, values).then(result => {
     res.status(201).send(result.rows)
   }).catch(err => {
-    console.log(err)
-  });
+    console.log(err);
+    res.status(500).json({ error: "An error occurred while getting profile information." });
+});
 }
 
 function addCommentHandler(req, res) {
@@ -343,39 +344,41 @@ function addCommentHandler(req, res) {
   let values = [user_id, Home_id, comment]
   client.query(sql, values).then((result) => {
     res.status(201).json(result.rows);
-  })
-    .catch(err => {
-      console.log(err)
-    });
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json({ error: "An error occurred while adding the comment." });
+});
 
 }
 
 function getFavHandler(req, res) {
-  let {userID}=req.body;
+  let { userID } = req.body;
   let sql = 'SELECT * FROM Comment WHERE user_id=$1';
-  let values=[userID];
-  client.query(sql,values).then(result => {
-    if(result.rows.length>0){
+  let values = [userID];
+  client.query(sql, values).then(result => {
+    if (result.rows.length > 0) {
       res.status(201).json(result.rows)
     }
-    else{
+    else {
       res.status(505).json("There is no comment yet")
     }
-  }).catch((err)=>{
-    res.status(500).json(err);
-  })
+  }).catch((err) => {
+    console.log(err);
+    res.status(500).json({ error: "An error occurred while getting favorites." });
+})
 }
 
 function updateCommentHandller(req, res) {
-
   let { user_id, Home_id, comment } = req.body;
   let sql = `UPDATE Comment SET comment=$1
     WHERE Home_id=$2 AND user_id=$3 RETURNING *;`
   let values = [comment, Home_id, user_id];
   client.query(sql, values).then(result => {
     res.send(result.rows)
-  }).catch(err => { console.log(err) })
-
+  }).catch(err => {
+    console.log(err);
+    res.status(500).json({ error: "An error occurred while updating the comment." });
+})
 }
 
 //Constructor
@@ -390,19 +393,20 @@ function HomeData(property_id, webUrl, address, prop_status, price, beds, baths,
   this.photo = photo;
 }
 
-//handle error 404
+// Error handlers
 function error404(req, res) {
   return res.status(404).json({ status: 404, responseText: "page not found error" });
 }
-//handle error 500
+
 function errorHandler(err, req, res) {
   return res.status(500).json({ status: 500, responseText: "ERROR 500" });
 }
 
+// Start server
 client.connect().then(() => {
   app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
   })
 }).catch(err => {
   console.log(`Failed to listen on port ${PORT} because of error: ${err}`);
-})
+});
