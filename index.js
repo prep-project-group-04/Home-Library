@@ -142,7 +142,7 @@ function restPassword(req, res) {
       axios.post('https://home-library.up.railway.app/api/sendEmail', {
         email: `${email}`
       }).then(function (response) {
-        res.status(201).send(response.data);
+        res.status(201).send(response.data.yourCode);
       }).catch(function (error) {
         res.status(505).send(error);
       });
